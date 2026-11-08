@@ -1,53 +1,55 @@
-\documentclass[10pt,onecolumn]{IEEEtran}
-\usepackage[utf8]{inputenc}
+\documentclass[10pt,a4paper,onecolumn]{IEEEtran}
+
 \usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
 \usepackage[spanish,es-tabla]{babel}
-\usepackage{lmodern,microtype}
-\usepackage[a4paper,margin=1.8cm,top=1.65cm,bottom=1.70cm]{geometry}
-\usepackage{array,booktabs,longtable,enumitem,xcolor}
-\usepackage{csquotes}
-\usepackage{hyperref}
+\usepackage{lmodern,microtype,csquotes}
+\usepackage{longtable,tabularx,array,booktabs,enumitem,needspace}
+\usepackage[left=19mm,right=19mm,top=17mm,bottom=18mm]{geometry}
+\usepackage[hidelinks]{hyperref}
 \usepackage[backend=biber,style=ieee,sorting=none]{biblatex}
 \addbibresource{referencias.bib}
-\hypersetup{colorlinks=true,linkcolor=black,urlcolor=blue!45!black,citecolor=black}
-\setlength{\parindent}{0pt}
+\DefineBibliographyStrings{spanish}{bibliography={Referencias}}
+\urlstyle{same}
+\setlength{\parindent}{0.65em}
 \setlength{\parskip}{2pt}
-\setlength{\tabcolsep}{4pt}
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.08}
 \setlist{nosep,leftmargin=*}
-\renewcommand{\arraystretch}{1.06}
-\definecolor{azuluteq}{HTML}{123D5D}
-\newcommand{\mathead}[1]{\textcolor{azuluteq}{\bfseries #1}}
-\title{Comparación entre modelos de proceso de requisitos en escenarios reales\\
-\large GA-PRAC-01 --- Ingeniería de Requerimientos (ISR-401)}
-\author{Cedeño Ávila Winston Damián \quad -- \quad Paca Pilataza Luis Alberto\\
-\normalsize Grupo CPR, cuarto nivel ``B''\\
-\normalsize Universidad Técnica Estatal de Quevedo}
+\newcolumntype{Z}{>{\raggedright\arraybackslash}X}
+
+\title{Comparación de modelos de proceso de requisitos\\
+\large GA-PRAC-01 · Caso de estudio: sistema de un GAD}
+\author{Cedeño Ávila Winston Damián y Paca Pilataza Luis Alberto\\
+{\small Universidad Técnica Estatal de Quevedo · Facultad de Ciencias de la Computación}\\
+{\small Carrera de Software · Cuarto nivel «B» · Ingeniería de Requisitos (ISR-401)}\\
+{\small Grupo CPR · 7 de noviembre de 2026}}
+
 \begin{document}
 \maketitle
 \begin{abstract}
-En este tercer avance se comparan los modelos en cascada, iterativo y ágil para un caso académico de un GAD con contrato público. La matriz permite identificar ventajas y dificultades de cada modelo según cambios, actores, integración, riesgos, trazabilidad y validación. Las valoraciones son supuestos de trabajo; no representan resultados obtenidos en un GAD real.
+Se comparan tres formas de organizar los requisitos —cascada, iterativa y ágil— mediante un caso de estudio de un GAD con contrato público. Primero se revisan siete criterios del contexto y después se identifican los actores que podrían intervenir y las actividades de ingeniería de requisitos. Es un ejercicio académico basado en supuestos; no se ha estudiado un contrato o GAD específico.
 \end{abstract}
-\textbf{Escenario de esta versión:} Sistema de un GAD con contrato público.\\
-\textbf{Nota:} caso de estudio seleccionado de la guía, sin constancia de asignación oficial al grupo CPR.
+\textbf{Caso de estudio:} sistema de un GAD con contrato público. Fue elegido entre los ejemplos de la guía FORM-PC-01; todavía no consta una asignación oficial del escenario al grupo CPR.
 
 \section{Delimitación del escenario}
-El material FORM-PC-01 enumera cuatro escenarios posibles, pero la captura de GA-PRAC-01 no indica cuál fue asignado al grupo. Este análisis toma como \textbf{hipótesis de trabajo} el escenario indicado y no presenta supuestas entrevistas, contratos ni pruebas reales.
-\textbf{Supuestos usados para comparar los modelos:}
+La guía de clase menciona cuatro escenarios y no contamos con un dato que confirme el asignado al grupo. Por eso trabajamos con la opción del GAD como ejemplo, sin afirmar que un municipio real haya solicitado el sistema.
+\textbf{Para hacer la comparación asumimos lo siguiente:}
 \begin{itemize}
-\item Como ejemplo del enunciado, suponemos que el GAD contrataría un sistema administrativo y que el contrato podría fijar alcance, entregables y responsables de aprobación.
-\item No se ha facilitado un pliego, contrato ni proceso específico: los mecanismos contractuales descritos son hipótesis de trabajo y no obligaciones jurídicas afirmadas.
-\item Se consideran usuarios de ventanilla, responsable institucional, área jurídica/contratación y equipo proveedor como actores posibles.
+\item Se contrataría un sistema administrativo y existirían entregables y responsables de aceptar el trabajo.
+\item No tenemos pliego ni contrato: las posibles aprobaciones y gestiones de cambios se plantean solo para comparar los modelos.
+\item Podrían intervenir personal de ventanilla, una persona responsable del GAD, el área de contratación y un equipo proveedor.
 \end{itemize}
-Las valoraciones siguientes son una propuesta académica que debe contrastarse con las condiciones que el docente haya proporcionado. La clasificación sigue la idea de adaptar el proceso de requisitos a cada contexto, no de aplicar un modelo universal \cite{pohl2025,ireb2026}.
+Los juicios de la matriz dependen de esos supuestos y deberán revisarse si el docente proporciona otras condiciones. El proceso de requisitos se adapta al tipo de proyecto \cite{pohl2025,ireb2026}.
 
 \section{Caracterización de los modelos}
 \small
 \begin{longtable}{@{}p{2.0cm}p{5.25cm}p{3.3cm}p{5.55cm}@{}}
 \toprule
-\mathead{Modelo} & \mathead{Fases / actividades típicas} & \mathead{Supuesto} & \mathead{Condiciones de uso}\\
+\textbf{Modelo} & \textbf{Fases / actividades típicas} & \textbf{Supuesto} & \textbf{Condiciones de uso}\\
 \midrule\endfirsthead
 \toprule
-\mathead{Modelo} & \mathead{Fases / actividades típicas} & \mathead{Supuesto} & \mathead{Condiciones de uso}\\\midrule\endhead
+\textbf{Modelo} & \textbf{Fases / actividades típicas} & \textbf{Supuesto} & \textbf{Condiciones de uso}\\\midrule\endhead
 Cascada & Levantamiento y análisis de requisitos; especificación; revisión y aprobación; desarrollo y pruebas; aceptación. & Requisitos relativamente estables y responsables capaces de aprobar una línea base. & Alcance contractual o técnico claro, cambios poco frecuentes y necesidad de documentación formal. \\
 \midrule
 Iterativo & Levantamiento inicial; especificar una parte; construir o simular; revisar; ajustar; repetir hasta integrar. & Se dispone de revisiones periódicas y los hallazgos pueden incorporarse por ciclos. & Partes del sistema validables por módulos, requisitos inicialmente incompletos o integración riesgosa. \\
@@ -59,7 +61,7 @@ Iterativo & Levantamiento inicial; especificar una parte; construir o simular; r
 \textit{Nota:} estas fases son una síntesis didáctica; los procesos reales pueden combinar actividades de los tres enfoques. La elicitación, documentación, validación y gestión de requisitos no desaparecen por usar ciclos o sprints \cite{ireb2026}.
 
 \section{Criterios y matriz comparativa contextualizada}
-Se valoran siete criterios: estabilidad y cambios, stakeholders, tipo de sistema e integración, riesgo y criticidad, documentación y trazabilidad, validación y entrega, condiciones de aplicación. En cada celda se indica una consecuencia concreta para el escenario, no una calificación universal del modelo.
+Se emplean siete criterios para evitar elegir el modelo solo por preferencia. Cada celda explica qué ocurriría en el caso supuesto del GAD.
 \textbf{Qué se evalúa en cada criterio.} 
 \emph{Estabilidad y cambios}: cuánto puede variar lo solicitado y cómo se aprueban ajustes; 
 \emph{stakeholders}: quién participa y qué disponibilidad tiene; 
@@ -73,10 +75,10 @@ Se valoran siete criterios: estabilidad y cambios, stakeholders, tipo de sistema
 \footnotesize
 \begin{longtable}{@{}p{2.42cm}p{4.5cm}p{4.5cm}p{4.5cm}@{}}
 \toprule
-\mathead{Criterio} & \mathead{Cascada} & \mathead{Iterativo} & \mathead{Ágil} \\
+\textbf{Criterio} & \textbf{Cascada} & \textbf{Iterativo} & \textbf{Ágil} \\
 \midrule\endfirsthead
 \toprule
-\mathead{Criterio} & \mathead{Cascada} & \mathead{Iterativo} & \mathead{Ágil} \\
+\textbf{Criterio} & \textbf{Cascada} & \textbf{Iterativo} & \textbf{Ágil} \\
 \midrule\endhead
 Estabilidad y cambios & Si el contrato fija el alcance, una línea base y solicitud formal de cambio facilitan registrar impactos en plazo y entrega. & Puede aclarar módulos con prototipos, pero cada cambio necesita cotejarse con el alcance contractual. & El backlog flexible permite ajustes frecuentes, que podrían chocar con aprobaciones y entregables pactados. \\
 \midrule
@@ -96,5 +98,49 @@ Condiciones de aplicación & Es adecuado cuando un acuerdo formal establece alca
 \normalsize
 
 
-\printbibliography[title={Referencias}]
+
+\section{Actores posibles y responsabilidades}
+Los siguientes roles servirían para organizar el levantamiento y la revisión de requisitos. No corresponden a personas entrevistadas ni a cargos confirmados de un GAD particular.
+\begin{itemize}
+\item \textbf{Responsable institucional del GAD:} definir objetivos, prioridades y criterios de aceptación; autorizar decisiones según sus competencias.
+\item \textbf{Personal de atención o ventanilla:} describir tareas, excepciones y necesidades de uso cotidiano.
+\item \textbf{Área de tecnologías:} aclarar integraciones, permisos, seguridad, mantenimiento y restricciones técnicas.
+\item \textbf{Área de contratación o asesoría jurídica:} revisar la coherencia entre requisitos, alcance acordado y procedimiento de cambios, si participa en el proyecto.
+\item \textbf{Equipo proveedor:} elicitar, analizar, documentar, proponer soluciones y registrar evidencias de validación.
+\item \textbf{Ciudadanía usuaria:} aportar necesidades de accesibilidad, claridad y seguimiento cuando el sistema incluya servicios dirigidos al público.
+\end{itemize}
+
+\section{Aplicación del framework de ingeniería de requisitos}
+Para aplicar el framework de IR al ejemplo se separan las actividades centrales de las de gestión que acompañan todo el proceso \cite{ireb2026}. La tabla indica lo que se haría y qué documento debería quedar como resultado; ninguna actividad se presenta como ejecutada.
+\small
+\begin{longtable}{@{}p{3.0cm}p{6.25cm}p{5.65cm}@{}}
+\toprule
+\textbf{Actividad} & \textbf{Aplicación hipotética al GAD} & \textbf{Artefacto / evidencia esperada}\\
+\midrule\endfirsthead
+\toprule
+\textbf{Actividad} & \textbf{Aplicación hipotética al GAD} & \textbf{Artefacto / evidencia esperada}\\
+\midrule\endhead
+Elicitación (central) & Reunir necesidades de responsables, personal operativo y tecnología; distinguir necesidades de decisiones contractuales. & Lista inicial de interesados, preguntas de entrevista, catálogo preliminar de necesidades.\\
+\midrule
+Documentación (central) & Redactar requisitos funcionales y de calidad con identificadores, origen y criterios verificables. & Especificación de requisitos, historias o casos de uso, glosario.\\
+\midrule
+Validación y negociación (central) & Revisar ambigüedades, conflictos de prioridad y criterios de aceptación con representantes autorizados. & Acta de revisión propuesta, registro de acuerdos y criterios de aceptación.\\
+\midrule
+Gestión de cambios (transversal) & Evaluar impacto de una solicitud sobre alcance, costo, plazo y pruebas; no asumir aprobación automática. & Solicitud de cambio, historial de versiones y decisión documentada.\\
+\midrule
+Trazabilidad (transversal) & Vincular requisito, origen, componente, entregable y prueba de aceptación. & Matriz de trazabilidad requisito--entregable--prueba.\\
+\midrule
+Priorización y seguimiento (transversal) & Ordenar necesidades por valor, riesgo y dependencia, respetando las reglas que se acuerden. & Registro de prioridades, estado y responsable de cada requisito.\\
+\midrule
+\end{longtable}
+\normalsize
+\textbf{Ejemplo ilustrativo, no requisito real:} ``El sistema permitirá consultar el estado de un trámite mediante un identificador''. Antes de aprobarlo habría que aclarar quién consulta, qué estados existen, qué datos pueden mostrarse y cómo se comprueba su cumplimiento. Este ejemplo demuestra la necesidad de elicitación, validación y trazabilidad; no describe un trámite existente.
+
+\section{Qué nos deja esta comparación}
+Para un contrato de alcance definido, cascada facilitaría aprobar una línea base, pero dejaría el riesgo de detectar errores demasiado tarde. Un modelo iterativo permitiría probar módulos antes de integrarlos, siempre que los cambios queden documentados. El enfoque ágil necesitaría funcionarios disponibles para revisar prioridades y avances; no sabemos si eso sería posible. Por tanto, la elección depende de las condiciones del proyecto, no solo de que se trate de un GAD \cite{pohl2025,iso2018}.
+
+\section*{Uso de herramientas de apoyo}
+Se utilizó ChatGPT (GPT-6) para apoyar la organización inicial del contenido, la redacción del borrador y la revisión de LaTeX. La comparación debe revisarse con la guía y las fuentes citadas; no se atribuyen entrevistas ni datos de campo.
+
+\printbibliography
 \end{document}
