@@ -31,8 +31,16 @@ pdflatex -interaction=nonstopmode -halt-on-error main.tex
 
 Dependencias: `IEEEtran`, `babel` (español), `biblatex`, `biber`, `lmodern`, `microtype`, `csquotes`, `longtable`, `tabularx`, `array`, `booktabs`, `enumitem`, `needspace`, `geometry`, `hyperref` y paquetes TeX habituales.
 
-## Alcance del quinto avance
+## Alcance del sexto avance (versión consolidada)
 
-Incorpora una **recomendación argumentada** del modelo iterativo con controles formales, contrasta por qué no se eligen cascada y ágil como modelos principales y presenta riesgos concretos y mitigaciones. Conserva los modelos, matriz y framework de avances anteriores.
+Reúne caracterización, criterios y matriz contextualizada, actores posibles, actividades centrales y transversales del framework de IR, recomendación con razones y descarte de alternativas, riesgos y mitigaciones, y ejemplo académico de trazabilidad. Incluye una nota de límites del caso y declaración de apoyo de IA.
 
-**Pendiente para la revisión final:** incorporar una comprobación más detallada de la trazabilidad, revisar coherencia y fuentes con el compañero y confirmar las condiciones de entrega del SGA. La propuesta no demuestra hechos reales de contratación pública.
+**Revisión antes de entregar:** comprobar compilación y lectura del PDF; confirmar con el docente si el GAD es el escenario válido para CPR; verificar participación real de los miembros; comprobar la rúbrica exacta del SGA, la entrega solicitada y que la bibliografía sea fiel a las fuentes. Un commit por sí solo no acredita participación si no refleja trabajo efectivo.
+
+## Referencias contrastadas
+
+- Klaus Pohl, *Requirements Engineering*, Springer, 2.ª ed. (2025): ISBN 978-3-662-69204-2.
+- IREB CPRE Foundation Level Syllabus 3.3.0 (2026), autores Bühne, Glinz, van Loenhoud y Staal.
+- ISO/IEC/IEEE 29148:2018, norma de ingeniería de requisitos.
+
+Los detalles están en `referencias.bib`.

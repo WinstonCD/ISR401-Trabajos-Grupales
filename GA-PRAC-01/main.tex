@@ -28,7 +28,7 @@
 \begin{document}
 \maketitle
 \begin{abstract}
-Se comparan tres formas de organizar los requisitos —cascada, iterativa y ágil— mediante un caso de estudio de un GAD con contrato público. La matriz aborda siete criterios, identifica actores y actividades de ingeniería de requisitos y fundamenta una elección iterativa con riesgos y medidas de control. Es un ejercicio académico basado en supuestos; no se ha estudiado un contrato o GAD específico.
+Se comparan tres formas de organizar los requisitos —cascada, iterativa y ágil— mediante un caso de estudio de un GAD con contrato público. La comparación usa siete criterios del caso, describe actores y actividades de ingeniería de requisitos, recomienda un proceso iterativo con mitigaciones y presenta un ejemplo de trazabilidad propuesto. Es un ejercicio académico basado en supuestos; no se ha estudiado un contrato o GAD específico.
 \end{abstract}
 \textbf{Caso de estudio:} sistema de un GAD con contrato público. Fue elegido entre los ejemplos de la guía FORM-PC-01; todavía no consta una asignación oficial del escenario al grupo CPR.
 
@@ -171,8 +171,40 @@ Confundir revisión con aceptación & Una demostración satisfactoria podría in
 \normalsize
 Estas medidas son propuestas académicas. Sin el contrato, un responsable institucional confirmado ni documentación del sistema no se puede asignar probabilidad real a los riesgos ni asegurar que las medidas estén implementadas.
 
+
+\section{Comprobación de la propuesta}
+Para probar que la recomendación sea coherente con el framework, se presenta un requisito \emph{ilustrativo} de la sección anterior. No es un requisito obtenido de un GAD ni corresponde a un sistema implementado.
+
+\small
+\begin{longtable}{@{}p{3.3cm}p{12.6cm}@{}}
+\toprule
+\textbf{Elemento} & \textbf{Ejemplo académico de trazabilidad}\\
+\midrule\endfirsthead
+\toprule
+\textbf{Elemento} & \textbf{Ejemplo académico de trazabilidad}\\
+\midrule\endhead
+Identificador y fuente & RF-EJ-01; necesidad supuesta de una persona que consulta un trámite. No existe entrevista ni documento fuente.\\
+\midrule
+Enunciado por validar & El sistema permitiría consultar el estado de un trámite por identificador, previa definición de quién puede acceder.\\
+\midrule
+Preguntas de elicitación & ¿Qué tipos de trámites admite? ¿Cuáles son los estados? ¿Qué información pública puede mostrarse?\\
+\midrule
+Revisión de requisitos & Confirmar con representantes autorizados los estados, perfiles de acceso y criterios de aceptación; registrar conflictos y acuerdos.\\
+\midrule
+Comprobación prevista & Preparar casos de prueba para identificador válido, inexistente y consulta sin permisos, una vez aclaradas las reglas. No se afirma que las pruebas se hayan ejecutado.\\
+\midrule
+Control por iteración & Actualizar la versión de RF-EJ-01 y su relación con pantalla, decisión documentada y prueba prevista.\\
+\midrule
+\end{longtable}
+\normalsize
+
+\section{Conclusiones y límites de la comparación}
+En los supuestos usados, la opción iterativa presenta el mejor equilibrio entre validación temprana y documentación de acuerdos. Cascada sería preferible si los requisitos estuvieran aprobados y fueran estables; ágil podría ser más apropiado si existieran colaboración constante y margen contractual para repriorizar. Así, la decisión no depende del nombre de la entidad sino de sus condiciones de trabajo \cite{pohl2025,iso2018}.
+
+El grupo no dispone de pliego, entrevistas, contrato o datos de campo. Por eso las matrices y la propuesta no demuestran que un GAD real funcione de esta manera. Antes de dar el trabajo por definitivo hay que confirmar con el docente que este escenario es válido para CPR y dejar constancia de la participación efectiva de quienes hayan aportado; no se atribuyen tareas a integrantes sin evidencia.
+
 \section*{Uso de herramientas de apoyo}
-Se utilizó ChatGPT (GPT-6) para apoyar la organización inicial del contenido, la redacción del borrador y la revisión de LaTeX. La comparación debe revisarse con la guía y las fuentes citadas; no se atribuyen entrevistas ni datos de campo.
+Se utilizó ChatGPT (GPT-6) como apoyo en la estructura, el borrador, la comparación y la compilación de LaTeX. Los datos bibliográficos se contrastaron con las páginas de Springer, IREB e ISO; las valoraciones del GAD siguen siendo supuestos académicos. No se realizaron entrevistas ni pruebas de campo.
 
 \printbibliography
 \end{document}
