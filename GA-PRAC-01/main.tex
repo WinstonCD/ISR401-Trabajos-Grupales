@@ -28,7 +28,7 @@
 \begin{document}
 \maketitle
 \begin{abstract}
-Se comparan tres formas de organizar los requisitos —cascada, iterativa y ágil— mediante un caso de estudio de un GAD con contrato público. Primero se revisan siete criterios del contexto y después se identifican los actores que podrían intervenir y las actividades de ingeniería de requisitos. Es un ejercicio académico basado en supuestos; no se ha estudiado un contrato o GAD específico.
+Se comparan tres formas de organizar los requisitos —cascada, iterativa y ágil— mediante un caso de estudio de un GAD con contrato público. La matriz aborda siete criterios, identifica actores y actividades de ingeniería de requisitos y fundamenta una elección iterativa con riesgos y medidas de control. Es un ejercicio académico basado en supuestos; no se ha estudiado un contrato o GAD específico.
 \end{abstract}
 \textbf{Caso de estudio:} sistema de un GAD con contrato público. Fue elegido entre los ejemplos de la guía FORM-PC-01; todavía no consta una asignación oficial del escenario al grupo CPR.
 
@@ -136,8 +136,40 @@ Priorización y seguimiento (transversal) & Ordenar necesidades por valor, riesg
 \normalsize
 \textbf{Ejemplo ilustrativo, no requisito real:} ``El sistema permitirá consultar el estado de un trámite mediante un identificador''. Antes de aprobarlo habría que aclarar quién consulta, qué estados existen, qué datos pueden mostrarse y cómo se comprueba su cumplimiento. Este ejemplo demuestra la necesidad de elicitación, validación y trazabilidad; no describe un trámite existente.
 
-\section{Qué nos deja esta comparación}
-Para un contrato de alcance definido, cascada facilitaría aprobar una línea base, pero dejaría el riesgo de detectar errores demasiado tarde. Un modelo iterativo permitiría probar módulos antes de integrarlos, siempre que los cambios queden documentados. El enfoque ágil necesitaría funcionarios disponibles para revisar prioridades y avances; no sabemos si eso sería posible. Por tanto, la elección depende de las condiciones del proyecto, no solo de que se trate de un GAD \cite{pohl2025,iso2018}.
+
+\section{Recomendación del modelo}
+\textbf{Se recomienda el modelo iterativo con control formal de requisitos.} La decisión se refiere al caso académico y depende de los supuestos descritos; no determina cuál modelo utilizaría un GAD real.
+
+Hay cuatro razones relacionadas con el escenario: (1) una revisión por módulos permitiría que personal de ventanilla y tecnología detecte errores de interpretación antes de la entrega completa; (2) el registro de versiones y una línea base por iteración ayudarían a justificar qué se acordó y qué cambió; (3) las pruebas tempranas de integración reducirían el riesgo de descubrir problemas al final; y (4) se podrían mantener puntos de aprobación institucional sin obligar a que todas las necesidades se conozcan desde el primer día \cite{pohl2025,ireb2026}.
+
+\textbf{Por qué no cascada como modelo principal.} Sería razonable si el contrato tuviera requisitos ya cerrados y aceptados, pero en nuestro supuesto no existe un pliego que demuestre esa estabilidad. Esperar hasta el final para contrastar el flujo de los trámites aumentaría el riesgo de corregir tarde.
+
+\textbf{Por qué no ágil como enfoque principal.} Los incrementos serían útiles para visualizar pantallas y recibir opiniones, pero trabajar únicamente con un backlog cambiante exigiría responsables disponibles y un acuerdo que permita reordenar el alcance. Ninguna de esas condiciones está confirmada. Un equipo podría usar técnicas ágiles dentro de las iteraciones sin renunciar al registro formal de requisitos.
+
+\textbf{Aplicación propuesta.} Elaborar una especificación inicial, organizar módulos de trabajo y cerrar cada ciclo con revisión de interesados, registro de acuerdos, actualización de la matriz de trazabilidad y decisión documentada sobre los cambios. Una revisión de módulo no equivale por sí sola a aceptación contractual: eso tendría que quedar pactado.
+
+\section{Riesgos de la elección y medidas de control}
+\small
+\begin{longtable}{@{}p{3.10cm}p{5.40cm}p{7.40cm}@{}}
+\toprule
+\textbf{Riesgo concreto} & \textbf{Cómo afectaría al escenario} & \textbf{Medida de mitigación propuesta}\\
+\midrule\endfirsthead
+\toprule
+\textbf{Riesgo concreto} & \textbf{Cómo afectaría al escenario} & \textbf{Medida de mitigación propuesta}\\
+\midrule\endhead
+Cambios fuera del alcance & Un hallazgo de ventanilla en una iteración podría modificar entregables inicialmente previstos. & Registrar el cambio, analizar efectos en alcance, tiempo y pruebas; obtener la autorización que corresponda antes de incorporarlo.\\
+\midrule
+Poca disponibilidad de funcionarios & Una revisión tardía dejaría requisitos sin validar y demoraría el siguiente módulo. & Acordar fechas de revisión desde el inicio; enviar prototipos y preguntas concretas; registrar decisiones pendientes.\\
+\midrule
+Pérdida de trazabilidad & Varias versiones de requisitos podrían dificultar saber qué se debe comprobar en la entrega. & Mantener identificadores únicos y una matriz que relacione fuente, versión, entregable y caso de prueba; revisarla en cada ciclo.\\
+\midrule
+Problemas de integración & Un módulo aparentemente correcto podría fallar al conectarse con servicios o datos existentes. & Definir interfaces y dependencias al inicio; preparar pruebas de integración progresivas y registrar resultados.\\
+\midrule
+Confundir revisión con aceptación & Una demostración satisfactoria podría interpretarse equivocadamente como aprobación formal de la entrega. & Distinguir actas de revisión técnica de los documentos de aceptación que establezca el acuerdo; no presumir efectos contractuales.\\
+\midrule
+\end{longtable}
+\normalsize
+Estas medidas son propuestas académicas. Sin el contrato, un responsable institucional confirmado ni documentación del sistema no se puede asignar probabilidad real a los riesgos ni asegurar que las medidas estén implementadas.
 
 \section*{Uso de herramientas de apoyo}
 Se utilizó ChatGPT (GPT-6) para apoyar la organización inicial del contenido, la redacción del borrador y la revisión de LaTeX. La comparación debe revisarse con la guía y las fuentes citadas; no se atribuyen entrevistas ni datos de campo.

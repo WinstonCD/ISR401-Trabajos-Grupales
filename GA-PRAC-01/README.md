@@ -1,10 +1,8 @@
-# GA-PRAC-01 · Grupo CPR
+# GA-PRAC-01 — Modelos de proceso de requisitos
 
-**Asignatura:** Ingeniería de Requerimientos (ISR-401) · 4.º nivel «B».  
-**Avance:** 4 de 6 · Actores y framework de ingeniería de requisitos.
+**Grupo del SGA:** CPR · **Asignatura:** Ingeniería de Requisitos (ISR-401) · **Carrera:** Software, cuarto nivel «B»
 
-**Formato:** IEEEtran, una columna, títulos numerados, tablas y referencias IEEE; mismo criterio visual del trabajo FORM-TL-01 del repositorio individual.  
-**Escenario utilizado:** sistema de un GAD con contrato público. **Caso de estudio provisional elegido de las opciones de FORM-PC-01; no consta como escenario asignado oficialmente al grupo.**
+**Caso usado:** sistema de un GAD con contrato público, tomado como *escenario académico provisional* de la guía FORM-PC-01. **No se ha confirmado que sea el escenario oficialmente asignado al grupo CPR.** No se analizaron contratos, GAD ni entrevistas reales.
 
 ## Integrantes registrados en el SGA
 
@@ -12,19 +10,17 @@
 - Paca Pilataza Luis Alberto
 - Rivera Suárez Jonathan Javier
 
-El registro de integrantes no equivale a constancia de participación. Los aportes efectivos se deben verificar mediante revisión individual y commits de cada integrante. La situación del tercer integrante debe comunicarse al docente sin atribuirle trabajo que no haya hecho.
+El registro de integrantes no demuestra su participación. Solo se atribuye trabajo a quien realmente revise, modifique o publique sus aportes; cualquier ausencia debe comunicarse al docente.
 
-## Contenido del cuarto avance
+## Documentos
 
-- `main.tex`: caracterización, matriz comparativa y propuesta de actores, actividades y artefactos del framework de IR.
-- `main.pdf`: documento generado desde el LaTeX.
-- `referencias.bib`: bibliografía utilizada, en formato IEEE; sin cambios respecto del avance anterior.
+- `main.tex`: fuente editable IEEEtran a una columna.
+- `main.pdf`: PDF generado desde el mismo archivo fuente.
+- `referencias.bib`: referencias IEEE.
 
-El cuarto avance mantiene la matriz del tercer commit y añade un mapeo de actores, actividades y artefactos. La matriz estudia siete criterios: estabilidad y cambios, stakeholders, tipo de sistema e integración, riesgo y criticidad, documentación y trazabilidad, validación y entrega, y condiciones de aplicación. Los supuestos son exclusivamente didácticos: no se obtuvieron contratos, pliegos ni entrevistas de un GAD real.
+## Cómo compilar en un entorno con TeX Live
 
-## Compilación
-
-Con TeX Live o MiKTeX (IEEEtran, babel en español, biblatex, biber y paquetes de tablas), ejecutar en la carpeta del documento:
+Desde esta carpeta, ejecutar en orden:
 
 ```bash
 pdflatex -interaction=nonstopmode -halt-on-error main.tex
@@ -33,12 +29,10 @@ pdflatex -interaction=nonstopmode -halt-on-error main.tex
 pdflatex -interaction=nonstopmode -halt-on-error main.tex
 ```
 
-La selección definitiva del escenario debe verificarse con el docente. La actividad FORM-PC-01 individual y la GA-PRAC-01 grupal del SGA tienen instrucciones distintas; no se deben confundir sus formatos de entrega.
+Dependencias: `IEEEtran`, `babel` (español), `biblatex`, `biber`, `lmodern`, `microtype`, `csquotes`, `longtable`, `tabularx`, `array`, `booktabs`, `enumitem`, `needspace`, `geometry`, `hyperref` y paquetes TeX habituales.
 
-## Uso de herramientas
+## Alcance del quinto avance
 
-Se utilizó ChatGPT como apoyo para estructurar el borrador, redactar la comparación y revisar LaTeX. El contenido debe ser revisado y explicado por sus autores; no se deben inventar pruebas o participaciones.
+Incorpora una **recomendación argumentada** del modelo iterativo con controles formales, contrasta por qué no se eligen cascada y ágil como modelos principales y presenta riesgos concretos y mitigaciones. Conserva los modelos, matriz y framework de avances anteriores.
 
-## Alcance de este avance
-
-Se identifican actores posibles (responsable institucional, ventanilla, tecnologías, contratación/jurídica, proveedor y ciudadanía), actividades centrales (elicitación, documentación, validación y negociación) y transversales (gestión de cambios, trazabilidad y priorización). Son **supuestos académicos** que requieren confirmación; no se realizaron entrevistas, contratos ni aprobaciones. Este cuarto avance fue preparado para revisión de Winston; no acredita por sí solo participación de los demás integrantes.
+**Pendiente para la revisión final:** incorporar una comprobación más detallada de la trazabilidad, revisar coherencia y fuentes con el compañero y confirmar las condiciones de entrega del SGA. La propuesta no demuestra hechos reales de contratación pública.
