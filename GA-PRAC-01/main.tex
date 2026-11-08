@@ -25,10 +25,10 @@
 \begin{document}
 \maketitle
 \begin{abstract}
-En este segundo avance se caracteriza el proceso en cascada, iterativo y ágil usando un escenario académico como referencia. Se establecen los supuestos y las condiciones que después servirán para construir la matriz comparativa. No se estudia ni se representa a una institución real.
+En este tercer avance se comparan los modelos en cascada, iterativo y ágil para un caso académico de un GAD con contrato público. La matriz permite identificar ventajas y dificultades de cada modelo según cambios, actores, integración, riesgos, trazabilidad y validación. Las valoraciones son supuestos de trabajo; no representan resultados obtenidos en un GAD real.
 \end{abstract}
 \textbf{Escenario de esta versión:} Sistema de un GAD con contrato público.\\
-\textbf{Aviso:} confirmar con el docente que sea el escenario asignado al grupo CPR.
+\textbf{Nota:} caso de estudio seleccionado de la guía, sin constancia de asignación oficial al grupo CPR.
 
 \section{Delimitación del escenario}
 El material FORM-PC-01 enumera cuatro escenarios posibles, pero la captura de GA-PRAC-01 no indica cuál fue asignado al grupo. Este análisis toma como \textbf{hipótesis de trabajo} el escenario indicado y no presenta supuestas entrevistas, contratos ni pruebas reales.
@@ -38,7 +38,7 @@ El material FORM-PC-01 enumera cuatro escenarios posibles, pero la captura de GA
 \item No se ha facilitado un pliego, contrato ni proceso específico: los mecanismos contractuales descritos son hipótesis de trabajo y no obligaciones jurídicas afirmadas.
 \item Se consideran usuarios de ventanilla, responsable institucional, área jurídica/contratación y equipo proveedor como actores posibles.
 \end{itemize}
-Las condiciones propuestas son hipótesis didácticas que deben contrastarse con lo que el docente indique para el grupo. La clasificación sigue la idea de adaptar el proceso de requisitos a cada contexto, no de aplicar un modelo universal \cite{pohl2025,ireb2026}.
+Las valoraciones siguientes son una propuesta académica que debe contrastarse con las condiciones que el docente haya proporcionado. La clasificación sigue la idea de adaptar el proceso de requisitos a cada contexto, no de aplicar un modelo universal \cite{pohl2025,ireb2026}.
 
 \section{Caracterización de los modelos}
 \small
@@ -57,6 +57,43 @@ Iterativo & Levantamiento inicial; especificar una parte; construir o simular; r
 \end{longtable}
 \normalsize
 \textit{Nota:} estas fases son una síntesis didáctica; los procesos reales pueden combinar actividades de los tres enfoques. La elicitación, documentación, validación y gestión de requisitos no desaparecen por usar ciclos o sprints \cite{ireb2026}.
+
+\section{Criterios y matriz comparativa contextualizada}
+Se valoran siete criterios: estabilidad y cambios, stakeholders, tipo de sistema e integración, riesgo y criticidad, documentación y trazabilidad, validación y entrega, condiciones de aplicación. En cada celda se indica una consecuencia concreta para el escenario, no una calificación universal del modelo.
+\textbf{Qué se evalúa en cada criterio.} 
+\emph{Estabilidad y cambios}: cuánto puede variar lo solicitado y cómo se aprueban ajustes; 
+\emph{stakeholders}: quién participa y qué disponibilidad tiene; 
+\emph{tipo de sistema e integración}: módulos, interfaces o dependencias técnicas; 
+\emph{riesgo y criticidad}: consecuencias de equivocarse; 
+\emph{documentación y trazabilidad}: posibilidad de seguir cada requisito hasta su comprobación; 
+\emph{validación y entrega}: cómo se comprueba lo construido; 
+\emph{condiciones de aplicación}: acuerdos, tiempos y restricciones para trabajar con ese modelo.
+
+
+\footnotesize
+\begin{longtable}{@{}p{2.42cm}p{4.5cm}p{4.5cm}p{4.5cm}@{}}
+\toprule
+\mathead{Criterio} & \mathead{Cascada} & \mathead{Iterativo} & \mathead{Ágil} \\
+\midrule\endfirsthead
+\toprule
+\mathead{Criterio} & \mathead{Cascada} & \mathead{Iterativo} & \mathead{Ágil} \\
+\midrule\endhead
+Estabilidad y cambios & Si el contrato fija el alcance, una línea base y solicitud formal de cambio facilitan registrar impactos en plazo y entrega. & Puede aclarar módulos con prototipos, pero cada cambio necesita cotejarse con el alcance contractual. & El backlog flexible permite ajustes frecuentes, que podrían chocar con aprobaciones y entregables pactados. \\
+\midrule
+Stakeholders & Actas de levantamiento y validación por responsables del GAD delimitan quién aprueba cada requisito. & Revisiones de módulos con ventanilla y sistemas permiten descubrir diferencias de interpretación. & Exige disponibilidad continua de funcionarios para ordenar backlog; esa disponibilidad no está confirmada. \\
+\midrule
+Tipo de sistema e integración & Permite describir trámites, perfiles y reportes antes de implementar; integración tardía es una debilidad. & Permite validar trámites por módulos sin perder acuerdos institucionales. & Incrementos ayudan a visualizar pantallas, pero deben ajustarse a la documentación exigible. \\
+\midrule
+Riesgo y criticidad & La aprobación de una especificación disminuye disputas de alcance, aunque errores iniciales pueden propagarse. & Pruebas por módulo detectan flujos incompletos; se requiere control formal de desvíos. & La adaptación frecuente puede afectar predictibilidad de cronograma y aceptación contractual. \\
+\midrule
+Documentación y trazabilidad & Matriz requisito-entregable-prueba y actas de aprobación sostienen un expediente coherente. & Exige mantener versiones de especificaciones, decisiones y pruebas en cada iteración. & Historias sin trazabilidad formal serían insuficientes para explicar cumplimiento de entregables pactados. \\
+\midrule
+Validación y entrega & Hitos definidos para aprobación documental y aceptación; conviene agregar prototipos tempranos. & Revisión parcial con cada dependencia del GAD antes de aceptación institucional. & Demostraciones frecuentes, siempre que la revisión tenga representación institucional autorizada. \\
+\midrule
+Condiciones de aplicación & Es adecuado cuando un acuerdo formal establece alcance y entregables relativamente estables. & Es más apropiado si el contrato permite aceptación parcial y revisión progresiva. & Es conveniente si hay contrato flexible, capacidad de priorización y aprobación continua. \\
+\midrule
+\end{longtable}
+\normalsize
 
 
 \printbibliography[title={Referencias}]
