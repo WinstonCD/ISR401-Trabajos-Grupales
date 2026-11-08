@@ -1,0 +1,63 @@
+\documentclass[10pt,onecolumn]{IEEEtran}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-tabla]{babel}
+\usepackage{lmodern,microtype}
+\usepackage[a4paper,margin=1.8cm,top=1.65cm,bottom=1.70cm]{geometry}
+\usepackage{array,booktabs,longtable,enumitem,xcolor}
+\usepackage{csquotes}
+\usepackage{hyperref}
+\usepackage[backend=biber,style=ieee,sorting=none]{biblatex}
+\addbibresource{referencias.bib}
+\hypersetup{colorlinks=true,linkcolor=black,urlcolor=blue!45!black,citecolor=black}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{2pt}
+\setlength{\tabcolsep}{4pt}
+\setlist{nosep,leftmargin=*}
+\renewcommand{\arraystretch}{1.06}
+\definecolor{azuluteq}{HTML}{123D5D}
+\newcommand{\mathead}[1]{\textcolor{azuluteq}{\bfseries #1}}
+\title{Comparación entre modelos de proceso de requisitos en escenarios reales\\
+\large GA-PRAC-01 --- Ingeniería de Requerimientos (ISR-401)}
+\author{Cedeño Ávila Winston Damián \quad -- \quad Paca Pilataza Luis Alberto\\
+\normalsize Grupo CPR, cuarto nivel ``B''\\
+\normalsize Universidad Técnica Estatal de Quevedo}
+\begin{document}
+\maketitle
+\begin{abstract}
+En este segundo avance se caracteriza el proceso en cascada, iterativo y ágil usando un escenario académico como referencia. Se establecen los supuestos y las condiciones que después servirán para construir la matriz comparativa. No se estudia ni se representa a una institución real.
+\end{abstract}
+\textbf{Escenario de esta versión:} Sistema de un GAD con contrato público.\\
+\textbf{Aviso:} confirmar con el docente que sea el escenario asignado al grupo CPR.
+
+\section{Delimitación del escenario}
+El material FORM-PC-01 enumera cuatro escenarios posibles, pero la captura de GA-PRAC-01 no indica cuál fue asignado al grupo. Este análisis toma como \textbf{hipótesis de trabajo} el escenario indicado y no presenta supuestas entrevistas, contratos ni pruebas reales.
+\textbf{Supuestos usados para comparar los modelos:}
+\begin{itemize}
+\item Como ejemplo del enunciado, suponemos que el GAD contrataría un sistema administrativo y que el contrato podría fijar alcance, entregables y responsables de aprobación.
+\item No se ha facilitado un pliego, contrato ni proceso específico: los mecanismos contractuales descritos son hipótesis de trabajo y no obligaciones jurídicas afirmadas.
+\item Se consideran usuarios de ventanilla, responsable institucional, área jurídica/contratación y equipo proveedor como actores posibles.
+\end{itemize}
+Las condiciones propuestas son hipótesis didácticas que deben contrastarse con lo que el docente indique para el grupo. La clasificación sigue la idea de adaptar el proceso de requisitos a cada contexto, no de aplicar un modelo universal \cite{pohl2025,ireb2026}.
+
+\section{Caracterización de los modelos}
+\small
+\begin{longtable}{@{}p{2.0cm}p{5.25cm}p{3.3cm}p{5.55cm}@{}}
+\toprule
+\mathead{Modelo} & \mathead{Fases / actividades típicas} & \mathead{Supuesto} & \mathead{Condiciones de uso}\\
+\midrule\endfirsthead
+\toprule
+\mathead{Modelo} & \mathead{Fases / actividades típicas} & \mathead{Supuesto} & \mathead{Condiciones de uso}\\\midrule\endhead
+Cascada & Levantamiento y análisis de requisitos; especificación; revisión y aprobación; desarrollo y pruebas; aceptación. & Requisitos relativamente estables y responsables capaces de aprobar una línea base. & Alcance contractual o técnico claro, cambios poco frecuentes y necesidad de documentación formal. \\
+\midrule
+Iterativo & Levantamiento inicial; especificar una parte; construir o simular; revisar; ajustar; repetir hasta integrar. & Se dispone de revisiones periódicas y los hallazgos pueden incorporarse por ciclos. & Partes del sistema validables por módulos, requisitos inicialmente incompletos o integración riesgosa. \\
+\midrule
+Ágil & Visión y backlog; refinamiento; planificación; desarrollo de incremento; revisión y adaptación del backlog. & Hay una persona que prioriza y stakeholders disponibles para retroalimentación frecuente. & Necesidades cambiantes, valor entregable por incrementos y posibilidad de revisar prioridades. \\
+\midrule
+\end{longtable}
+\normalsize
+\textit{Nota:} estas fases son una síntesis didáctica; los procesos reales pueden combinar actividades de los tres enfoques. La elicitación, documentación, validación y gestión de requisitos no desaparecen por usar ciclos o sprints \cite{ireb2026}.
+
+
+\printbibliography[title={Referencias}]
+\end{document}

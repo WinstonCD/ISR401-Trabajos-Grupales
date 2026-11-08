@@ -1,35 +1,31 @@
-# GA-PRAC-01 — Comparación entre modelos de proceso de requisitos
+# GA-PRAC-01 · CPR
 
-**Asignatura:** Ingeniería de Requerimientos (ISR-401)  
-**Grupo SGA:** CPR  
-**Modalidad:** grupal  
-**Curso:** 4.º nivel B, Universidad Técnica Estatal de Quevedo
+**Materia:** Ingeniería de Requerimientos (ISR-401) · 4.º nivel «B».  
+**Escenario de esta versión:** Sistema de un GAD con contrato público. **Caso de estudio provisional elegido de la guía; no está confirmado como escenario asignado por el docente.**
 
-## Objetivo
+Integrantes registrados en el SGA: Cedeño Ávila Winston Damián, Paca Pilataza Luis Alberto, Rivera Suárez Jonathan Javier.
 
-Comparar los modelos en cascada, iterativo y ágil frente al escenario asignado. La actividad debe incluir caracterización, matriz contextualizada, identificación de actores, actividades del framework de IR, elección argumentada y riesgos con mitigación.
+Trabajo organizado entre Winston y Luis Alberto. La participación real se acredita por sus propias revisiones, aportes y commits. Sobre el tercer integrante se debe consultar al docente; no se inventan participaciones.
 
-## Estado de elaboración
+## Documento
 
-- [ ] Confirmar el escenario asignado al grupo (planta, emprendimiento móvil, GAD o cooperativa).
-- [ ] Delimitación y caracterización de modelos.
-- [ ] Matriz comparativa contextualizada.
-- [ ] Actores, framework y artefactos de IR.
-- [ ] Recomendación con al menos tres razones, descarte de alternativas y gestión de riesgos.
-- [ ] Revisión de citas, declaración de apoyo de IA y compilación final.
+- `main.tex`: fuente del documento; etapa **2 de 6**.
+- `main.pdf`: archivo compilado desde la fuente y optimizado para lectura. La compilación reproduce el contenido y la distribución, aunque la compresión posterior puede modificar los bytes.
+- `referencias.bib`: bibliografía IEEE.
 
-## Integrantes inscritos en el SGA
+## Compilación reproducible
 
-- Cedeño Ávila Winston Damián
-- Paca Pilataza Luis Alberto
-- Rivera Suárez Jonathan Javier
+Se necesita TeX Live o MiKTeX con IEEEtran, babel español, biblatex, biber y paquetes habituales de tablas.
 
-La autoría efectiva y la participación se sustentan en revisiones y commits comprobables; la lista anterior únicamente refleja los integrantes inscritos. La situación de participación se comunicará al docente.
+```bash
+pdflatex -interaction=nonstopmode -halt-on-error main.tex
+biber main
+pdflatex -interaction=nonstopmode -halt-on-error main.tex
+pdflatex -interaction=nonstopmode -halt-on-error main.tex
+```
 
-## Archivos esperados
+## Integridad académica
 
-Una vez elegido el escenario se incorporarán `main.tex`, `main.pdf` y `referencias.bib`. La versión final se compilará con `pdflatex`, `biber`, `pdflatex`, `pdflatex`, según el README de la versión seleccionada.
+La matriz usa hipótesis didácticas expresas, no entrevistas ni datos reales de una institución. El escenario y la explicación final son responsabilidad del grupo. No presentar un contenido como aporte de otro estudiante sin su revisión efectiva. Se declara el apoyo de ChatGPT en el documento final.
 
-## Criterio de integridad
-
-El trabajo se basará en el escenario que indique el docente, sin inventar entrevistas, pruebas ni datos institucionales. El uso de IA para apoyar el borrador, las comparaciones y LaTeX se declarará de forma breve y fiel en el documento final.
+**Diferencia importante:** El PDF FORM-PC-01 entregado como referencia describe una actividad individual; no se aplica automáticamente su regla de PDF de una sola página a la actividad grupal GA-PRAC-01 del SGA. Verificar en el SGA el formato de entrega.
