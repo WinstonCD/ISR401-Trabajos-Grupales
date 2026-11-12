@@ -6,7 +6,7 @@
 **Período:** 2026–2027 SPA  
 **Actividad:** GA-SUM-01 — Práctica Experimental Unidad I: Proceso de requisitos  
 **PFC:** Plataforma de Ventas con módulo de recomendación basado en IA para el soporte de ventas en establecimientos eléctricos  
-**Estado:** Inicio de la actividad; informe, evidencias y validaciones todavía en elaboración.
+**Estado:** Primer avance — contexto inicial del PFC documentado; las demás secciones, las evidencias de campo y la versión final siguen en elaboración.
 
 ## 1. Propósito y contexto del PFC
 
@@ -16,13 +16,13 @@ La práctica aplicará el proceso de Ingeniería de Requisitos al PFC del equipo
 
 ## 2. Integrantes y distribución de funciones
 
-Para esta práctica se propone organizar el trabajo entre **tres personas**. Los nombres de los otros dos integrantes y el reparto definitivo se confirmarán con el equipo antes de la portada final.
+Los tres integrantes son **Cedeño Avila Winston Damian**, **Paca Pilataza Luis Alberto** y **Rivera Suarez Jonathan Javier**. Esta distribución de funciones es la propuesta de trabajo del equipo y sus aportes efectivos se documentarán en los siguientes commits.
 
-| Responsable provisional | Función combinada de la guía | Aporte principal previsto |
+| Integrante | Función combinada de la guía | Aporte principal previsto |
 | --- | --- | --- |
 | Cedeño Avila Winston Damian | Analista líder y apoyo en documentación | Alcance del PFC, coordinación del proceso, actores, integración y revisión de coherencia |
-| Integrante 2 (nombre por confirmar) | Investigador A y B | Fundamento teórico 2.1–2.4, clasificación de requisitos, métricas de calidad y revisión de fuentes |
-| Integrante 3 (nombre por confirmar) | Investigador C y apoyo documental | Fundamento teórico 2.5–2.6, contexto, ocho perspectivas, mapa conceptual y anexos |
+| Paca Pilataza Luis Alberto | Investigador A y B | Fundamento teórico 2.1–2.4, clasificación de requisitos, métricas de calidad y revisión de fuentes |
+| Rivera Suarez Jonathan Javier | Investigador C y apoyo documental | Fundamento teórico 2.5–2.6, contexto, ocho perspectivas, mapa conceptual y anexos |
 
 La guía menciona cinco funciones (analista líder, investigadores A/B/C y documentador). En un equipo de tres, las funciones pueden combinarse; **la autoría y los aportes se registrarán según el trabajo efectivamente realizado**. Las cédulas, correos y consentimientos de terceros no se publicarán aquí.
 
@@ -64,7 +64,7 @@ Las entrevistas, observaciones, validaciones, mediciones, autorizaciones y captu
 
 ## 6. Estructura de archivos prevista
 
-La carpeta está en fase inicial; **los siguientes archivos aún no se han creado**.
+La carpeta está en fase inicial: se incorporaron `main.tex`, `referencias.bib` y `secciones/00_contexto_pfc.tex`. El PDF de avance puede regenerarse con los comandos indicados. Las demás secciones y figuras siguen pendientes.
 
 ```text
 GA-SUM-01/
@@ -85,7 +85,7 @@ GA-SUM-01/
     └── fuentes_y_evidencias.md
 ```
 
-**Compilación prevista:** `pdflatex main.tex`, `biber main`, `pdflatex main.tex`, `pdflatex main.tex`, una vez que exista el proyecto en LaTeX con `biblatex` y estilo IEEE. Los pasos definitivos se verificarán con una compilación limpia.
+**Compilación comprobable:** `pdflatex main.tex`, `biber main`, `pdflatex main.tex`, `pdflatex main.tex`, una vez que exista el proyecto en LaTeX con `biblatex` y estilo IEEE. Los pasos definitivos se verificarán con una compilación limpia.
 
 ## 7. Fuentes de partida
 
@@ -100,3 +100,7 @@ GA-SUM-01/
 ## 8. Integridad académica y seguimiento
 
 Se podrán utilizar herramientas de IA para apoyo en estructura, edición o revisión, **declarando su uso y verificando el contenido con las fuentes y el equipo**. Las entrevistas, evaluaciones, decisiones, resultados y contribuciones de cada integrante no se atribuirán a personas que no los hayan realizado. El informe debe ser comprensible y defendible por el equipo.
+
+## Avance del 12 de noviembre — Winston
+
+Se incorporó la sección 0 del PFC: delimitación del problema comercial, alcance propuesto, visión preliminar, cuatro necesidades por validar y cinco preguntas de elicitación. Se incluyó el archivo maestro de LaTeX y la bibliografía. **Este commit no incluye todavía el PDF binario, que queda disponible en el paquete del avance para subirlo por separado.** No se presentan entrevistas, aprobaciones ni pruebas ejecutadas. Los apartados de Alberto y Rivera siguen pendientes de revisión y publicación por cada integrante.

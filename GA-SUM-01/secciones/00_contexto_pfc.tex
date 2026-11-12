@@ -1,0 +1,44 @@
+\section*{0. Selecci\'on del PFC y contexto del problema}
+\addcontentsline{toc}{section}{0. Selecci\'on del PFC y contexto del problema}
+\subsection*{Descripci\'on del sistema (m\'aximo 150 palabras)}
+El proyecto propone una plataforma de ventas para establecimientos que comercializan materiales el\'ectricos. Su objetivo es reunir en un mismo entorno el registro de productos, la consulta de disponibilidad, la preparaci\'on de ventas y el historial de operaciones. Como apoyo, plantea un m\'odulo de recomendaci\'on basado en inteligencia artificial que sugiera art\'iculos relacionados con la solicitud del comprador, sin sustituir la verificaci\'on t\'ecnica ni la decisi\'on del vendedor. Los usuarios previstos son personal de ventas, administradores y responsables de inventario. El escenario de referencia del PFC es un establecimiento del sector el\'ectrico de Quevedo (ELECTRORIOS); sus procedimientos concretos, permisos de acceso y fuentes de informaci\'on a\'un deben confirmarse con los responsables. Esta propuesta se analiza como un sistema por construir, no como un producto desplegado ni evaluado en condiciones reales.
+
+\subsection*{Problema y finalidad}
+En una venta de material el\'ectrico, el trabajador debe identificar la necesidad del cliente y comprobar si el producto existe, tiene un precio vigente y resulta pertinente. Si esa informaci\'on queda dispersa, se incrementa el riesgo de consultas repetidas o sugerencias poco apropiadas. La oportunidad de software es reunir el proceso comercial y aportar recomendaciones \emph{explicables}, siempre sujetas a revisi\'on humana. Este enfoque se formula como una necesidad preliminar que debe contrastarse con quienes usan el negocio; una necesidad no equivale a un requisito aprobado \cite{iso29148,pohl2025}.
+
+\subsection*{Alcance inicial y l\'imites}
+\begin{itemize}
+\item \textbf{Dentro del alcance propuesto:} consulta de cat\'alogo, stock disponible, registro de ventas, perfiles de acceso y sugerencias de productos con justificaci\'on visible.
+\item \textbf{Fuera del alcance, por ahora:} comprobaci\'on autom\'atica de compatibilidad el\'ectrica sin un especialista, decisiones aut\'onomas de compra, y conexiones con servicios externos cuyo contrato no haya sido confirmado.
+\item \textbf{No verificado:} inventario real del establecimiento, frecuencia de compras, herramientas actuales, conectividad y funcionamiento de cualquier motor de IA. Todo esto requiere levantamiento autorizado.
+\end{itemize}
+
+\subsection*{Tipo de sistema y visi\'on preliminar}
+Se clasifica de manera preliminar como un sistema de informaci\'on transaccional con funciones de apoyo a decisiones de venta. El componente de IA ampl\'ia las consultas, pero no reemplaza la responsabilidad del personal ni convierte las recomendaciones en validaciones t\'ecnicas de seguridad. La separaci\'on entre procesos del producto y reglas organizacionales ayudar\'a a evitar requisitos imposibles de comprobar \cite{pohl2025,iso29148}.
+
+\textbf{Visi\'on (adaptaci\'on al formato Moore de la gu\'ia):} Para el personal de establecimientos el\'ectricos que necesita consultar art\'iculos y completar ventas con informaci\'on coherente, la plataforma es un sistema de ventas con apoyo de recomendaci\'on que centraliza datos de productos y propone opciones relacionadas. A diferencia de llevar registros aislados, busca ofrecer trazabilidad del proceso y sugerencias que el vendedor pueda revisar.
+
+\subsection*{Necesidades preliminares por validar}
+\begin{table}[!ht]
+\centering\footnotesize
+\caption{Necesidades iniciales que deben contrastarse con el establecimiento}
+\label{tab:necesidades}
+\begin{tabularx}{\columnwidth}{@{}P{0.65cm}Y P{1.25cm}@{}}
+\toprule ID & Necesidad propuesta & Por validar\\\midrule
+N-01 & Consultar precio y stock sin duplicar registros. & Observaci\'on\\
+N-02 & Registrar la venta y recuperar su referencia. & Entrevista\\
+N-03 & Contar con sugerencias de art\'iculos pertinentes y revisables. & Taller\\
+N-04 & Restringir modificaciones de precios y existencias por rol. & Aprobaci\'on\\
+\bottomrule
+\end{tabularx}
+\end{table}
+\noindent\textit{Estado:} estas necesidades son hip\'otesis de trabajo. Las t\'ecnicas citadas son acciones previstas; no se han realizado entrevistas ni pruebas comerciales.
+
+\subsection*{Preguntas para la primera elicitaci\'on}
+\begin{enumerate}
+\item \textquestiondown{}C\'omo se identifica un art\'iculo y se consulta su disponibilidad antes de venderlo?
+\item \textquestiondown{}Qui\'en est\'a autorizado a cambiar precios, existencias y datos de clientes?
+\item \textquestiondown{}Qu\'e informaci\'on debe conservarse para revisar una venta?
+\item \textquestiondown{}Cu\'ando ser\'ia \`util recomendar un producto alternativo y qui\'en decide si es apto?
+\item \textquestiondown{}Cu\'ales son los problemas m\'as frecuentes en el flujo comercial actual?
+\end{enumerate}
