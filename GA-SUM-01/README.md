@@ -1,106 +1,64 @@
-# GA-SUM-01 · PE-U1 — Práctica Experimental de la Unidad I
+# GA-SUM-01 · PE-U1 — Ingeniería de Requisitos y Proceso de Requisitos
 
 **Asignatura:** Ingeniería de Requerimientos (ISR-401)  
 **Universidad:** Universidad Técnica Estatal de Quevedo (UTEQ)  
-**Carrera / nivel / paralelo:** Software · 4.º «B»  
+**Carrera:** Ingeniería de Software, cuarto nivel «B»  
 **Período:** 2026–2027 SPA  
-**Actividad:** GA-SUM-01 — Práctica Experimental Unidad I: Proceso de requisitos  
 **PFC:** Plataforma de Ventas con módulo de recomendación basado en IA para el soporte de ventas en establecimientos eléctricos  
-**Estado:** Primer avance — contexto inicial del PFC documentado; las demás secciones, las evidencias de campo y la versión final siguen en elaboración.
+**Estado de esta copia:** Contexto y fundamento te'orico inicial (Winston + Alberto), pendientes de validaci'on.
 
-## 1. Propósito y contexto del PFC
+## Integrantes y responsabilidades previstas
 
-La práctica aplicará el proceso de Ingeniería de Requisitos al PFC del equipo, que plantea una plataforma para registrar y apoyar las ventas en establecimientos de artículos eléctricos. El módulo de recomendación con IA se propone como ayuda para orientar la búsqueda de productos y posibles alternativas durante la atención comercial. El contexto local de referencia es un establecimiento del sector eléctrico en Quevedo, Los Ríos; **ELECTRORIOS** se ha considerado como caso de estudio del PFC, sujeto a confirmar el alcance de la observación y las autorizaciones correspondientes.
+| Integrante | Aporte de la primera jornada |
+|---|---|
+| **Cedeño Avila Winston Damian** | Contexto y límites del PFC; coordinación de secciones |
+| **Paca Pilataza Luis Alberto** | Fundamento teórico, fuentes primarias y ejemplos del PFC |
+| **Rivera Suarez Jonathan Javier** | Actores, matriz poder/interés, contexto y framework preliminar |
 
-**Importante:** se analiza un proyecto en desarrollo y un proceso comercial real; no se afirma que la plataforma ni sus recomendaciones ya estén implementadas o probadas. Los requisitos, métricas y resultados deberán distinguir entre observaciones, necesidades verificadas y propuestas.
+El reparto de tareas se propone para revisión y aprobación del grupo. Cada integrante debe revisar su contenido y realizar el commit desde su cuenta una vez que efectivamente haya trabajado su aporte. No se atribuyen entrevistas ni mediciones no ejecutadas.
 
-## 2. Integrantes y distribución de funciones
+## Tema y enfoque
 
-Los tres integrantes son **Cedeño Avila Winston Damian**, **Paca Pilataza Luis Alberto** y **Rivera Suarez Jonathan Javier**. Esta distribución de funciones es la propuesta de trabajo del equipo y sus aportes efectivos se documentarán en los siguientes commits.
+Se analiza el PFC de una plataforma para apoyar ventas de materiales eléctricos mediante catálogos, inventario, trazabilidad de operaciones y recomendaciones de productos basadas en IA. Se toma como referencia el contexto comercial local de Quevedo (ELECTRORIOS), pero **ninguna integración, política interna ni entrevista se declara verificada**. Se diferencia lo observado de lo supuesto y de lo que requiere autorización.
 
-| Integrante | Función combinada de la guía | Aporte principal previsto |
-| --- | --- | --- |
-| Cedeño Avila Winston Damian | Analista líder y apoyo en documentación | Alcance del PFC, coordinación del proceso, actores, integración y revisión de coherencia |
-| Paca Pilataza Luis Alberto | Investigador A y B | Fundamento teórico 2.1–2.4, clasificación de requisitos, métricas de calidad y revisión de fuentes |
-| Rivera Suarez Jonathan Javier | Investigador C y apoyo documental | Fundamento teórico 2.5–2.6, contexto, ocho perspectivas, mapa conceptual y anexos |
+## Archivos actuales en este avance
 
-La guía menciona cinco funciones (analista líder, investigadores A/B/C y documentador). En un equipo de tres, las funciones pueden combinarse; **la autoría y los aportes se registrarán según el trabajo efectivamente realizado**. Las cédulas, correos y consentimientos de terceros no se publicarán aquí.
+- `main.tex`: documento maestro en formato IEEE.
+- `main.pdf`: PDF generado mediante `pdflatex` y `biber`.
+- `referencias.bib`: referencias bibliográficas primarias y verificables.
+- `secciones/00_contexto_pfc.tex`: sección 0, alcance, necesidades y preguntas.
+- `secciones/01_fundamento.tex`: fundamento 2.1–2.4 y ejemplos aplicados.
 
-## 3. Criterios de evaluación de la rúbrica reducida
+## Compilación reproducible
 
-| Código | Criterio | Peso | Evidencia prevista |
-| --- | --- | ---: | --- |
-| C1 | Identificación y clasificación de requisitos | 20 % | Al menos 15 requisitos únicos: RF, RNF y restricciones justificados; RNF con métricas |
-| C2 | Propiedades de calidad de los requisitos | 20 % | Evaluación argumentada de cada requisito según ISO/IEC/IEEE 29148:2018, verificabilidad y trazabilidad |
-| C3 | Actores y framework de IR | 15 % | Roles concretos y correspondencia de actividades centrales y transversales |
-| C4 | Aplicación del proceso de requisitos | 25 % | Elicitación, análisis, especificación y validación con artefactos parciales del PFC |
-| C5 | Fundamento teórico y referencias | 10 % | Fuentes primarias verificadas: norma, Pohl, SWEBOK y complementarias en estilo IEEE |
-| C6 | Calidad documental | 10 % | Informe coherente, numeración de figuras, referencias cruzadas y reproducción del PDF |
+Se requiere TeX Live o MiKTeX con `IEEEtran`, `babel` español, `biblatex` estilo IEEE, `biber`, `microtype`, `lmodern`, `booktabs`, `tabularx`, `xurl` y `hyperref`. Desde la carpeta `GA-SUM-01`:
 
-**Condiciones de aceptación:** G1 — sistema/contexto real identificado; G2 — integrantes nominados y entrega dentro del plazo; G3 — evidencia concreta del proceso aplicado, no solo teoría.
-
-## 4. Actividades y artefactos previstos según la guía experimental
-
-1. **Definición del caso:** describir el PFC en máximo 150 palabras, identificar cinco interesados y ubicarlos en la matriz poder/interés, reconocer el tipo de sistema y registrar el contexto organizacional.
-2. **Investigación bibliográfica:** contrastar los conceptos con fuentes primarias; organizar una biblioteca Zotero/Mendeley, exportar referencias IEEE (Anexo A) y adjuntar captura de la biblioteca (Anexo B).
-3. **Fundamento 2.1–2.6:** presentar para cada concepto una definición con cita, una explicación propia y un ejemplo específico de ventas de materiales eléctricos; revisar coherencia e integridad académica.
-4. **Matriz de requisitos:** cubrir al menos 15 requisitos diferenciados (la rúbrica reducida exige 15, aunque la guía extensa indica 12 como mínimo), con ID, tipo, descripción EARS cuando corresponda, MoSCoW, fuente, criterio de aceptación y vínculos de trazabilidad. Incluir negocio, stakeholder, usuario, funcional, calidad, interfaz, desempeño, restricción y conformidad.
-5. **Contexto y visión:** documentar al menos cinco entidades externas, tipo de datos, protocolo y frecuencia propuesta; formular visión según Moore; analizar las ocho perspectivas de contexto de Pohl (tres preguntas y dos requisitos o restricciones por perspectiva).
-6. **Framework y proceso:** identificar analista, cliente, usuario y desarrollador; mapear actividades principales y transversales. Mostrar artefactos de elicitación, análisis, especificación y validación, separando lo efectuado de lo planificado.
-7. **Mapa conceptual:** construir el diagrama editable en draw.io y exportarlo como PNG/PDF; conectar al menos tres temas mediante vínculos cruzados.
-8. **Conclusiones y entrega:** la guía extensa solicita cinco conclusiones de mínimo 80 palabras cada una, pero al mismo tiempo indica «una por integrante»; **como el equipo previsto tiene tres personas, se revisará esta diferencia con el docente**. Compilar portada, índice, PFC, fundamento, artefactos, conclusiones, bibliografía y anexos. Extensión indicada: mínimo 15 páginas de contenido. Declarar el uso real de IA.
-
-Las entrevistas, observaciones, validaciones, mediciones, autorizaciones y capturas se registrarán **solo si realmente se realizan**. No se publicarán datos personales o comerciales sin permiso.
-
-## 5. Plan de trabajo y commits reales (tres días)
-
-| Fecha | Responsable 1 — Winston | Responsable 2 | Responsable 3 | Resultado verificable |
-| --- | --- | --- | --- | --- |
-| **Jueves 12/11/2026** | Crear estructura y README; delimitar el problema y las preguntas a validar | Seleccionar y registrar fuentes primarias; distribuir apartados 2.1–2.4 | Identificar actores y bosquejar límites de contexto | Inicio, roles, fuentes y alcance documentados |
-| **Viernes 13/11/2026** | Desarrollar actores, framework y secuencia del proceso | Proponer y justificar la matriz de 15+ requisitos y sus medidas | Desarrollar perspectivas de contexto, interfaces y diagrama editable | Artefactos de análisis y especificación incorporados |
-| **Sábado 14/11/2026** | Integrar, revisar trazabilidad y compilar PDF | Evaluar propiedades de los requisitos, citas y coherencia | Completar mapa, anexos y evidencias autorizadas | Versión revisada con contribuciones y revisión cruzada |
-
-**Los commits se harán cuando existan avances auténticos de cada integrante, en sus fechas reales.** Este calendario es una planificación, no una declaración de que esos aportes ya fueron realizados. No se fabricarán commits con fechas o autorías ajenas. La fecha y hora de cierre **deben confirmarse en el SGA** para esta actividad.
-
-## 6. Estructura de archivos prevista
-
-La carpeta está en fase inicial: se incorporaron `main.tex`, `referencias.bib` y `secciones/00_contexto_pfc.tex`. El PDF de avance puede regenerarse con los comandos indicados. Las demás secciones y figuras siguen pendientes.
-
-```text
-GA-SUM-01/
-├── README.md
-├── main.tex
-├── main.pdf
-├── referencias.bib
-├── secciones/
-│   ├── 00_contexto_pfc.tex
-│   ├── 01_fundamento.tex
-│   ├── 02_requisitos.tex
-│   ├── 03_proceso.tex
-│   └── 04_conclusiones.tex
-├── figuras/
-│   ├── mapa_conceptual.drawio
-│   └── mapa_conceptual.png
-└── anexos/
-    └── fuentes_y_evidencias.md
+```bash
+pdflatex -interaction=nonstopmode -halt-on-error main.tex
+biber main
+pdflatex -interaction=nonstopmode -halt-on-error main.tex
+pdflatex -interaction=nonstopmode -halt-on-error main.tex
 ```
 
-**Compilación comprobable:** `pdflatex main.tex`, `biber main`, `pdflatex main.tex`, `pdflatex main.tex`, una vez que exista el proyecto en LaTeX con `biblatex` y estilo IEEE. Los pasos definitivos se verificarán con una compilación limpia.
+Los comandos se han probado para la versión entregada. No incluir archivos de compilación auxiliares (`.aux`, `.bbl`, `.blg`, `.log`).
 
-## 7. Fuentes de partida
+## Rúbrica y alcance del trabajo
 
-- ISO/IEC/IEEE 29148:2018 — [ficha oficial ISO](https://www.iso.org/standard/72089.html).
-- ISO/IEC 25010:2023 — [ficha oficial ISO](https://www.iso.org/standard/78176.html).
-- Klaus Pohl, *Requirements Engineering: Fundamentals, Principles, and Techniques*, 2.ª ed., Springer, 2025 — [libro](https://link.springer.com/book/9783662692042).
-- IEEE Computer Society, *SWEBOK Guide*, v4.0 (2024) — [fuente oficial](https://www.computer.org/education/bodies-of-knowledge/software-engineering).
-- Además, la guía solicita 15288:2023, 12207:2017, PMBOK 7.ª edición, IREB CPRE FL v3.1 y referencias de EARS, que se verificarán al construir `referencias.bib`.
+Según la rúbrica reducida, la entrega final exigirá al menos **15 requisitos** identificados y justificados, RNF cuantificados, revisión argumentada de propiedades IEEE 29148, roles de IR, trazabilidad y artefactos de elicitación/análisis/especificación/validación. La guía experimental ampliada incluye también el fundamento 2.1–2.6, ocho perspectivas, mapa conceptual editable, fuentes primarias, conclusiones y un informe de mínimo 15 páginas.
 
-**Documentos de referencia de la actividad:** guía de práctica experimental de la UTEQ (PDF facilitado por el estudiante) y rúbrica reducida GA-SUM-01 / PE-U1 compartida en clase.
+**Este paquete es un avance de la jornada del 12 de noviembre; todavía no es la entrega final ni demuestra entrevistas realizadas.**
 
-## 8. Integridad académica y seguimiento
+## Plan para los días restantes
 
-Se podrán utilizar herramientas de IA para apoyo en estructura, edición o revisión, **declarando su uso y verificando el contenido con las fuentes y el equipo**. Las entrevistas, evaluaciones, decisiones, resultados y contribuciones de cada integrante no se atribuirán a personas que no los hayan realizado. El informe debe ser comprensible y defendible por el equipo.
+- **Viernes 13/11:** completar taxonomía y matriz de al menos 15 requisitos con criterios de aceptación, mejorar fuentes, preparar ocho perspectivas y los artefactos del proceso.
+- **Sábado 14/11:** validar coherencia y trazabilidad, integrar diagramas y anexos auténticos, redactar conclusiones revisadas por sus autores y compilar el documento completo.
 
-## Avance del 12 de noviembre — Winston
+Las fechas son un plan, no commits preprogramados. La fecha límite de esta práctica debe comprobarse en el SGA.
 
-Se incorporó la sección 0 del PFC: delimitación del problema comercial, alcance propuesto, visión preliminar, cuatro necesidades por validar y cinco preguntas de elicitación. Se incluyó el archivo maestro de LaTeX y la bibliografía. **Este commit no incluye todavía el PDF binario, que queda disponible en el paquete del avance para subirlo por separado.** No se presentan entrevistas, aprobaciones ni pruebas ejecutadas. Los apartados de Alberto y Rivera siguen pendientes de revisión y publicación por cada integrante.
+## Fuentes utilizadas
+
+Consultar `referencias.bib`. Se identifican principalmente ISO/IEC/IEEE 29148:2018, ISO/IEC 25010:2023, Pohl (segunda edición, 2025), SWEBOK v4 (2024), PMBOK 7 (2021), las ediciones pedidas por la guía de 15288 y 12207, Glinz (2007) y EARS (2009). La edición 12207:2017 se conserva por exigencia de la guía aunque tiene una edición posterior; no se considera la versión vigente.
+
+## Uso de IA e integridad
+
+Se utilizó ChatGPT (OpenAI, GPT-6) como apoyo en la organización, los borradores y la compilación en LaTeX. Las afirmaciones técnicas y los enlaces bibliográficos se cotejaron con fuentes oficiales cuando estaban disponibles. Cada integrante debe verificar, comprender y adaptar su sección antes de publicarla. No deben atribuirse a terceros trabajos o validaciones no realizadas.
