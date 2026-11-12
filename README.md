@@ -19,11 +19,12 @@ Cada actividad se almacena en una carpeta independiente para facilitar su revisi
 
 | Código | Actividad | Estado |
 |---|---|---|
-| GA-PRAC-01 | Comparación entre modelos de proceso de requisitos en escenarios reales | En desarrollo |
+| [GA-PRAC-01](GA-PRAC-01/) | Comparación entre modelos de proceso de requisitos en escenarios reales | Culminada |
+| [GA-SUM-01](GA-SUM-01/) | Práctica Experimental Unidad I: Proceso de requisitos, aplicada al PFC de plataforma de ventas con recomendaciones basadas en IA para establecimientos eléctricos | En desarrollo |
 
 ## Organización de los archivos
 
-La carpeta `GA-PRAC-01/` contiene la información correspondiente a la primera práctica grupal.
+La carpeta `GA-PRAC-01/` conserva la práctica grupal culminada, mientras que `GA-SUM-01/` contiene los avances de la práctica experimental actualmente en desarrollo.
 
 En cada actividad se incorporarán los documentos y materiales de trabajo, según lo solicitado por el docente.
 
