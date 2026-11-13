@@ -62,3 +62,7 @@ Consultar `referencias.bib`. Se identifican principalmente ISO/IEC/IEEE 29148:20
 ## Uso de IA e integridad
 
 Se utilizó ChatGPT (OpenAI, GPT-6) como apoyo en la organización, los borradores y la compilación en LaTeX. Las afirmaciones técnicas y los enlaces bibliográficos se cotejaron con fuentes oficiales cuando estaban disponibles. Cada integrante debe verificar, comprender y adaptar su sección antes de publicarla. No deben atribuirse a terceros trabajos o validaciones no realizadas.
+
+## Actualización de actores y contexto — 13 de noviembre de 2026
+
+Se incorpora el apartado de actores, matriz de poder e interés, relaciones externas y actividades del proceso. Este contenido estaba previsto para el avance de Rivera del día anterior, pero se integró desde la cuenta de Winston el **13 de noviembre**, por estar pendiente su publicación. No se modifica el historial ni se presenta como un commit realizado por Rivera. El equipo todavía debe revisar y validar este borrador. El PDF del avance se puede generar desde `main.tex` y las fuentes; la publicación del binario en GitHub queda pendiente.

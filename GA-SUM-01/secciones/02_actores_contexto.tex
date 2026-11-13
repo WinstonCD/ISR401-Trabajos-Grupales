@@ -1,0 +1,92 @@
+\section{Actores, contexto y marco del proceso de requisitos}
+\subsection{Actores principales y responsabilidades}
+La identificaci\'on de interesados permite reconocer a quienes solicitan el proyecto, utilizan el producto o influyen en sus restricciones. Los papeles deben distinguirse: \emph{cliente} no es necesariamente \emph{usuario}, y el \emph{ingeniero de requisitos} no debe asumir decisiones comerciales que corresponden a la organizaci\'on \cite{pohl2025,swebok2024}. Para el PFC se propone entrevistar al representante del negocio, observar un flujo comercial autorizado y contrastar dudas con personal operativo. Todav\'ia no se registran entrevistas ejecutadas.
+
+\begin{table}[!ht]
+\centering\scriptsize
+\caption{Cinco interesados iniciales del PFC; funciones propuestas para validar}
+\label{tab:stakeholders}
+\begin{tabularx}{\columnwidth}{@{}P{1.43cm}Y P{1.25cm}@{}}
+\toprule Actor & Necesidad que conviene consultar & Rol en IR\\\midrule
+Gerencia & Control de ventas, precios y alcance del proyecto. & Cliente y aprobador\\
+Vendedor/a & B\'usqueda, cotizaci\'on y cierre de ventas. & Usuario primario\\
+Encargado/a de inventario & Consistencia de existencias y devoluciones. & Usuario y experto de dominio\\
+Comprador/a & Informaci\'on clara y sugerencias pertinentes. & Interesado externo\\
+Equipo de tecnolog\'ia & Seguridad, operaci\'on y mantenibilidad. & Desarrollador / soporte\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Matriz de poder e inter\'es preliminar}
+La clasificaci\'on de interesados se plantea como una \emph{herramienta de an\'alisis del equipo} inspirada en la necesidad de gestionar su participaci\'on en proyectos, tal como se aborda en PMBOK 7 \cite{pmbok2021}. No representa una evaluaci\'on autorizada por ELECTRORIOS y deber\'a revisarse con sus responsables.
+
+\begin{table}[!ht]
+\centering\scriptsize
+\caption{Valoraciones provisionales de poder e inter\'es}
+\label{tab:poder}
+\begin{tabularx}{\columnwidth}{@{}P{1.35cm}ccY@{}}
+\toprule Interesado & Poder & Inter\'es & Estrategia propuesta\\\midrule
+Gerencia & Alto & Alto & Colaborar y solicitar aprobaci\'on\\
+Vendedor & Medio & Alto & Demostraciones y revisi\'on de tareas\\
+Inventario & Medio & Alto & Revisar reglas de stock\\
+Comprador & Bajo & Alto & Contrastar claridad de informaci\'on\\
+Soporte TIC & Medio & Medio & Consultar seguridad y factibilidad\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Delimitaci\'on del sistema y entidades externas}
+El l\'imite preliminar comprende la interfaz de ventas, la administraci\'on del cat\'alogo, los registros de operaciones y el m\'odulo de recomendaci\'on. La distinci\'on entre entorno y sistema ayuda a no inventar integraciones ni responsabilidades \cite{pohl2025}. La Tabla~\ref{tab:interfaces} enumera \textbf{posibles} relaciones que el equipo estudiar\'a: el protocolo y la frecuencia no son datos observados.
+
+\begin{table}[!ht]
+\centering\scriptsize
+\caption{Entidades externas e intercambios por confirmar}
+\label{tab:interfaces}
+\begin{tabularx}{\columnwidth}{@{}P{1.24cm}Y P{1.0cm}P{1.0cm}@{}}
+\toprule Entidad & Datos previstos & Protocolo & Momento\\\midrule
+Personal de ventas & Consulta, selecci\'on, confirmaci\'on & Web/app (propuesta) & Por venta\\
+Cat\'alogo maestro & C\'odigo, nombre, precio, estado & Por definir & Por consulta\\
+Sistema de inventario & Stock y movimientos & Por definir & Por venta\\
+Servicio de pago & Confirmaci\'on e ID de transacci\'on, si aplica & Por definir & Por pago\\
+Motor de IA externo & C\'odigos de productos y criterios, si se contrata & Por definir & Por sugerencia\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Roles del proceso y framework de IR}
+El \textbf{analista de requisitos} organiza sesiones, registra decisiones y eval\'ua inconsistencias; el \textbf{cliente} valida prioridades comerciales; los \textbf{usuarios} describen tareas y comprueban prototipos; y los \textbf{desarrolladores} contrastan restricciones y viabilidad. Son papeles del proceso, que pueden recaer en varias personas, no nombres de puestos ya confirmados dentro del establecimiento \cite{iso29148,pohl2025}.
+
+\begin{table}[!ht]
+\centering\scriptsize
+\caption{Aplicaci\'on propuesta del framework al PFC}
+\label{tab:framework}
+\begin{tabularx}{\columnwidth}{@{}P{1.13cm}Y P{1.4cm}@{}}
+\toprule Actividad & Acci\'on planeada & Artefacto esperado\\\midrule
+Elicitaci\'on & Preguntar y observar la b\'usqueda de productos. & Notas de campo\\
+An\'alisis & Revisar conflictos de stock y permisos. & Matriz de conflictos\\
+Especificaci\'on & Redactar requisitos identificados y trazables. & Lista de RF/RNF\\
+Validaci\'on & Contrastar escenarios con el cliente. & Acta de revisi\'on\\
+\midrule
+Transversal & Versionar cambios y controlar fuentes. & Git, trazabilidad\\
+Transversal & Medir claridad y viabilidad de requisitos. & Lista de control\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Primer mapa de necesidades y futuras verificaciones}
+La tabla establece trazabilidad de \emph{propuestas}, no evidencia de aceptaci\'on. Una necesidad solo se considerar\'a validada tras comprobar su origen y la aprobaci\'on del responsable correspondiente \cite{iso29148}.
+\begin{table}[!ht]
+\centering\scriptsize
+\caption{Trazabilidad preliminar que se debe validar}
+\label{tab:traza}
+\begin{tabularx}{\columnwidth}{@{}P{0.75cm}Y P{1.2cm}@{}}
+\toprule Necesidad & Requisito a desarrollar & M\'etodo propuesto\\\midrule
+N-01 & Consulta de producto, precio y stock. & Demostraci\'on\\
+N-02 & Registro de venta con referencia \`unica. & Caso de prueba\\
+N-03 & Recomendaci\'on justificable y descartable. & Revisi\'on usuario\\
+N-04 & Restricciones de edici\'on seg\'un rol. & Prueba de permisos\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\noindent\textit{Estado al cierre de este avance:} quedan pendientes el levantamiento autorizado, la verificaci\'on de protocolos, la lista completa de 15 requisitos, la matriz de evaluaci\'on individual y el mapa conceptual editable; estos elementos se desarrollar\'an en los siguientes d\'ias de trabajo.
