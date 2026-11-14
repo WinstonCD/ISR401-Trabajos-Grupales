@@ -1,0 +1,94 @@
+<mxfile host="Electron" agent="Gemini Notebook">
+  <diagram id="er-pfc-electrico" name="Diagrama ER - Plataforma Ventas e IA">
+    <mxGraphModel dx="2330" dy="1008" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="tbl_rol" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;align=left;verticalAlign=top;spacingLeft=8;spacingTop=6;spacingRight=8;spacingBottom=8;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;shadow=0;" value="&lt;div style=&quot;text-align: center; font-weight: bold; font-size: 13px; padding-bottom: 4px; border-bottom: 1.5px solid #6c8ebf;&quot;&gt;ROL&lt;/div&gt;&lt;div style=&quot;margin-top: 6px; font-size: 11px; line-height: 1.6;&quot;&gt;&lt;div style=&quot;font-weight: bold; color: #b85450;&quot;&gt;🔑 id_rol : INT [PK]&lt;/div&gt;&lt;div&gt;• nombre_rol : VARCHAR(50)&lt;/div&gt;&lt;div&gt;• descripcion : VARCHAR(150)&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="120" width="220" x="70" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="tbl_usuario" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;align=left;verticalAlign=top;spacingLeft=8;spacingTop=6;spacingRight=8;spacingBottom=8;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;shadow=0;" value="&lt;div style=&quot;text-align: center; font-weight: bold; font-size: 13px; padding-bottom: 4px; border-bottom: 1.5px solid #6c8ebf;&quot;&gt;USUARIO&lt;/div&gt;&lt;div style=&quot;margin-top: 6px; font-size: 11px; line-height: 1.6;&quot;&gt;&lt;div style=&quot;font-weight: bold; color: #b85450;&quot;&gt;🔑 id_usuario : INT [PK]&lt;/div&gt;&lt;div style=&quot;font-style: italic; color: #2d72d9;&quot;&gt;🔗 id_rol : INT [FK]&lt;/div&gt;&lt;div&gt;• nombre : VARCHAR(60)&lt;/div&gt;&lt;div&gt;• apellido : VARCHAR(60)&lt;/div&gt;&lt;div&gt;• correo : VARCHAR(100)&lt;/div&gt;&lt;div&gt;• password_hash : VARCHAR(255)&lt;/div&gt;&lt;div&gt;• estado : BOOLEAN&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="220" width="240" x="60" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="tbl_cliente" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;align=left;verticalAlign=top;spacingLeft=8;spacingTop=6;spacingRight=8;spacingBottom=8;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;shadow=0;" value="&lt;div style=&quot;text-align: center; font-weight: bold; font-size: 13px; padding-bottom: 4px; border-bottom: 1.5px solid #82b366;&quot;&gt;CLIENTE&lt;/div&gt;&lt;div style=&quot;margin-top: 6px; font-size: 11px; line-height: 1.6;&quot;&gt;&lt;div style=&quot;font-weight: bold; color: #b85450;&quot;&gt;🔑 id_cliente : INT [PK]&lt;/div&gt;&lt;div&gt;• identificacion : VARCHAR(20)&lt;/div&gt;&lt;div&gt;• nombres : VARCHAR(80)&lt;/div&gt;&lt;div&gt;• apellidos : VARCHAR(80)&lt;/div&gt;&lt;div&gt;• telefono : VARCHAR(15)&lt;/div&gt;&lt;div&gt;• correo : VARCHAR(100)&lt;/div&gt;&lt;div&gt;• direccion : VARCHAR(150)&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="210" width="240" x="420" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="tbl_venta" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;align=left;verticalAlign=top;spacingLeft=8;spacingTop=6;spacingRight=8;spacingBottom=8;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;shadow=0;" value="&lt;div style=&quot;text-align: center; font-weight: bold; font-size: 13px; padding-bottom: 4px; border-bottom: 1.5px solid rgb(130, 179, 102);&quot;&gt;VENTA&lt;/div&gt;&lt;div style=&quot;margin-top: 6px; font-size: 11px; line-height: 1.6;&quot;&gt;&lt;div style=&quot;font-weight: bold; color: rgb(184, 84, 80);&quot;&gt;🔑 id_venta : INT [PK]&lt;/div&gt;&lt;div style=&quot;font-style: italic; color: rgb(45, 114, 217);&quot;&gt;🔗 id_cliente : INT [FK]&lt;/div&gt;&lt;div style=&quot;font-style: italic; color: rgb(45, 114, 217);&quot;&gt;🔗 id_usuario : INT [FK]&lt;/div&gt;&lt;div&gt;• numero_factura : VARCHAR(30)&lt;/div&gt;&lt;div&gt;• fecha_emision : TIMESTAMP&lt;/div&gt;&lt;div&gt;• metodo_pago : VARCHAR(30)&lt;/div&gt;&lt;div&gt;• subtotal : DECIMAL(10,2)&lt;/div&gt;&lt;div&gt;• iva : DECIMAL(10,2)&lt;/div&gt;&lt;div&gt;• total : DECIMAL(10,2)&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="250" width="250" x="410" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="tbl_detalle_venta" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;align=left;verticalAlign=top;spacingLeft=8;spacingTop=6;spacingRight=8;spacingBottom=8;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;shadow=0;" value="&lt;div style=&quot;text-align: center; font-weight: bold; font-size: 13px; padding-bottom: 4px; border-bottom: 1.5px solid #82b366;&quot;&gt;DETALLE_VENTA&lt;/div&gt;&lt;div style=&quot;margin-top: 6px; font-size: 11px; line-height: 1.6;&quot;&gt;&lt;div style=&quot;font-weight: bold; color: #b85450;&quot;&gt;🔑 id_detalle : INT [PK]&lt;/div&gt;&lt;div style=&quot;font-style: italic; color: #2d72d9;&quot;&gt;🔗 id_venta : INT [FK]&lt;/div&gt;&lt;div style=&quot;font-style: italic; color: #2d72d9;&quot;&gt;🔗 id_producto : INT [FK]&lt;/div&gt;&lt;div&gt;• cantidad : INT&lt;/div&gt;&lt;div&gt;• precio_unitario_venta : DECIMAL(10,2)&lt;/div&gt;&lt;div&gt;• subtotal_linea : DECIMAL(10,2)&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="200" width="260" x="720" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="tbl_categoria" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;align=left;verticalAlign=top;spacingLeft=8;spacingTop=6;spacingRight=8;spacingBottom=8;fillColor=#ffe6cc;strokeColor=#d79b00;strokeWidth=2;shadow=0;" value="&lt;div style=&quot;text-align: center; font-weight: bold; font-size: 13px; padding-bottom: 4px; border-bottom: 1.5px solid #d79b00;&quot;&gt;CATEGORIA&lt;/div&gt;&lt;div style=&quot;margin-top: 6px; font-size: 11px; line-height: 1.6;&quot;&gt;&lt;div style=&quot;font-weight: bold; color: #b85450;&quot;&gt;🔑 id_categoria : INT [PK]&lt;/div&gt;&lt;div&gt;• nombre_categoria : VARCHAR(80)&lt;/div&gt;&lt;div&gt;• descripcion : TEXT&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="130" width="230" x="1050" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="tbl_proveedor" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;align=left;verticalAlign=top;spacingLeft=8;spacingTop=6;spacingRight=8;spacingBottom=8;fillColor=#ffe6cc;strokeColor=#d79b00;strokeWidth=2;shadow=0;" value="&lt;div style=&quot;text-align: center; font-weight: bold; font-size: 13px; padding-bottom: 4px; border-bottom: 1.5px solid #d79b00;&quot;&gt;PROVEEDOR&lt;/div&gt;&lt;div style=&quot;margin-top: 6px; font-size: 11px; line-height: 1.6;&quot;&gt;&lt;div style=&quot;font-weight: bold; color: #b85450;&quot;&gt;🔑 id_proveedor : INT [PK]&lt;/div&gt;&lt;div&gt;• ruc : VARCHAR(13)&lt;/div&gt;&lt;div&gt;• razon_social : VARCHAR(120)&lt;/div&gt;&lt;div&gt;• telefono : VARCHAR(15)&lt;/div&gt;&lt;div&gt;• direccion : VARCHAR(150)&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="160" width="230" x="1050" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="tbl_producto" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;align=left;verticalAlign=top;spacingLeft=8;spacingTop=6;spacingRight=8;spacingBottom=8;fillColor=#ffe6cc;strokeColor=#d79b00;strokeWidth=2;shadow=0;" value="&lt;div style=&quot;text-align: center; font-weight: bold; font-size: 13px; padding-bottom: 4px; border-bottom: 1.5px solid #d79b00;&quot;&gt;PRODUCTO&lt;/div&gt;&lt;div style=&quot;margin-top: 6px; font-size: 11px; line-height: 1.6;&quot;&gt;&lt;div style=&quot;font-weight: bold; color: #b85450;&quot;&gt;🔑 id_producto : INT [PK]&lt;/div&gt;&lt;div style=&quot;font-style: italic; color: #2d72d9;&quot;&gt;🔗 id_categoria : INT [FK]&lt;/div&gt;&lt;div style=&quot;font-style: italic; color: #2d72d9;&quot;&gt;🔗 id_proveedor : INT [FK]&lt;/div&gt;&lt;div&gt;• codigo_barra : VARCHAR(50)&lt;/div&gt;&lt;div&gt;• nombre_producto : VARCHAR(120)&lt;/div&gt;&lt;div&gt;• especificaciones_tecnicas : TEXT&lt;/div&gt;&lt;div&gt;• precio_unitario : DECIMAL(10,2)&lt;/div&gt;&lt;div&gt;• stock_actual : INT&lt;/div&gt;&lt;div&gt;• stock_minimo : INT&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="250" width="250" x="410" y="600" as="geometry" />
+        </mxCell>
+        <mxCell id="tbl_consulta" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;align=left;verticalAlign=top;spacingLeft=8;spacingTop=6;spacingRight=8;spacingBottom=8;fillColor=#e1d5e7;strokeColor=#9673a6;strokeWidth=2;shadow=0;" value="&lt;div style=&quot;text-align: center; font-weight: bold; font-size: 13px; padding-bottom: 4px; border-bottom: 1.5px solid rgb(150, 115, 166);&quot;&gt;CONSULTA_RECOMENDACION&lt;/div&gt;&lt;div style=&quot;margin-top: 6px; font-size: 11px; line-height: 1.6;&quot;&gt;&lt;div style=&quot;font-weight: bold; color: rgb(184, 84, 80);&quot;&gt;🔑 id_consulta : INT [PK]&lt;/div&gt;&lt;div style=&quot;font-style: italic; color: rgb(45, 114, 217);&quot;&gt;🔗 id_usuario : INT [FK]&lt;/div&gt;&lt;div style=&quot;font-style: italic; color: rgb(45, 114, 217);&quot;&gt;🔗 id_producto : INT [FK, Nullable]&lt;/div&gt;&lt;div&gt;• prompt_solicitud : TEXT&lt;/div&gt;&lt;div&gt;• respuesta_ia : TEXT&lt;/div&gt;&lt;div&gt;• modelo_motor : VARCHAR(50)&lt;/div&gt;&lt;div&gt;• fecha_consulta : TIMESTAMP&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="230" width="240" x="60" y="600" as="geometry" />
+        </mxCell>
+        <mxCell id="tbl_cache" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;align=left;verticalAlign=top;spacingLeft=8;spacingTop=6;spacingRight=8;spacingBottom=8;fillColor=#f8cecc;strokeColor=#b85450;strokeWidth=2;shadow=0;" value="&lt;div style=&quot;text-align: center; font-weight: bold; font-size: 13px; padding-bottom: 4px; border-bottom: 1.5px solid rgb(184, 84, 80);&quot;&gt;CACHE_TECNICO_OFFLINE&lt;/div&gt;&lt;div style=&quot;margin-top: 6px; font-size: 11px; line-height: 1.6;&quot;&gt;&lt;div style=&quot;font-weight: bold; color: rgb(184, 84, 80);&quot;&gt;🔑 id_cache : INT [PK]&lt;/div&gt;&lt;div style=&quot;font-style: italic; color: rgb(45, 114, 217);&quot;&gt;🔗 id_categoria : INT [FK, Nullable]&lt;/div&gt;&lt;div style=&quot;font-style: italic; color: rgb(45, 114, 217);&quot;&gt;🔗 id_producto : INT [FK, Nullable]&lt;/div&gt;&lt;div&gt;• consulta_clave : VARCHAR(255)&lt;/div&gt;&lt;div&gt;• respuesta_estandar : TEXT&lt;/div&gt;&lt;div&gt;• frecuencia_uso : INT&lt;/div&gt;&lt;div&gt;• activo : BOOLEAN&lt;/div&gt;&lt;div&gt;• ultima_sincronizacion : TIMESTAMP&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="250" width="230" x="1050" y="600" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_rol_usuario" edge="1" parent="1" source="tbl_rol" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;strokeColor=#4A5568;labelBackgroundColor=#ffffff;fontSize=11;fontStyle=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="tbl_usuario" value="1 : N">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_cliente_venta" edge="1" parent="1" source="tbl_cliente" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;strokeColor=#4A5568;labelBackgroundColor=#ffffff;fontSize=11;fontStyle=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="tbl_venta" value="1 : N">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_usuario_venta" edge="1" parent="1" source="tbl_usuario" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;strokeColor=#4A5568;labelBackgroundColor=#ffffff;fontSize=11;fontStyle=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="tbl_venta" value="1 : N">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_venta_detalle" edge="1" parent="1" source="tbl_venta" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;strokeColor=#4A5568;labelBackgroundColor=#ffffff;fontSize=11;fontStyle=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="tbl_detalle_venta" value="1 : N">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_prod_detalle" edge="1" parent="1" source="tbl_producto" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;strokeColor=#4A5568;labelBackgroundColor=#ffffff;fontSize=11;fontStyle=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="tbl_detalle_venta" value="1 : N">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_cat_prod" edge="1" parent="1" source="tbl_categoria" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;strokeColor=#4A5568;labelBackgroundColor=#ffffff;fontSize=11;fontStyle=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.2;entryDx=0;entryDy=0;" target="tbl_producto" value="1 : N">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1000" y="125" />
+              <mxPoint x="1000" y="650" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel_prov_prod" edge="1" parent="1" source="tbl_proveedor" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;strokeColor=#4A5568;labelBackgroundColor=#ffffff;fontSize=11;fontStyle=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.4;entryDx=0;entryDy=0;" target="tbl_producto" value="1 : N">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1020" y="330" />
+              <mxPoint x="1020" y="700" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel_usu_consulta" edge="1" parent="1" source="tbl_usuario" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;strokeColor=#4A5568;labelBackgroundColor=#ffffff;fontSize=11;fontStyle=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="tbl_consulta" value="1 : N">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_prod_consulta" edge="1" parent="1" source="tbl_producto" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;strokeColor=#4A5568;labelBackgroundColor=#ffffff;fontSize=11;fontStyle=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="tbl_consulta" value="0..1 : N">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="410" y="715" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel_cat_cache" edge="1" parent="1" source="tbl_categoria" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;strokeColor=#4A5568;labelBackgroundColor=#ffffff;fontSize=11;fontStyle=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="tbl_cache" value="0..1 : N">
+          <mxGeometry relative="1" x="0.0028" as="geometry">
+            <Array as="points">
+              <mxPoint x="1165" y="220" />
+              <mxPoint x="1320" y="220" />
+              <mxPoint x="1320" y="480" />
+              <mxPoint x="1165" y="480" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel_prod_cache" edge="1" parent="1" source="tbl_producto" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;strokeColor=#4A5568;labelBackgroundColor=#ffffff;fontSize=11;fontStyle=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="tbl_cache" value="0..1 : N">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -72,3 +72,7 @@ Se incorpora el apartado de actores, matriz de poder e interés, relaciones exte
 ## Avance de Winston — 13 de noviembre de 2026
 
 Se añade el análisis documental del problema comercial y del modelo entidad-relación, la secuencia de actividades de requisitos, los escenarios de stock y recomendaciones, y una matriz de riesgos. Las preguntas de campo y la validación permanecen pendientes. La versión PDF del día debe regenerarse desde LaTeX y publicarse por separado para mantener el archivo binario actualizado.
+
+## Avance de perspectivas de contexto — 14 de noviembre de 2026
+
+Se incorpora desde la cuenta de Winston el material preparado para el apartado de Rivera: ocho perspectivas del contexto según Pohl, preguntas de elicitación, posibles intercambios con entidades externas y análisis del diagrama entidad-relación del PFC. Se publica `secciones/05_perspectivas_contexto.tex` junto con la versión editable `figuras/diagrama_er_pfc.drawio`. El PNG y el PDF acumulado todavía necesitan sincronizarse con esta versión. El historial mantiene la autoría y las fechas reales; no se registra como una publicación realizada por Rivera.
