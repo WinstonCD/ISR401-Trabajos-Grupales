@@ -28,6 +28,8 @@ Se analiza el PFC de una plataforma para apoyar ventas de materiales eléctricos
 - `referencias.bib`: referencias bibliográficas primarias y verificables.
 - `secciones/00_contexto_pfc.tex`: sección 0, alcance, necesidades y preguntas.
 - `secciones/01_fundamento.tex`: fundamento 2.1–2.4 y ejemplos aplicados.
+- `secciones/02_actores_contexto.tex`: actores, contexto e interfaces propuestas.
+- `secciones/03_proceso_aplicado.tex`: aplicación documental del proceso y análisis de escenarios, incorporada el 13 de noviembre.
 
 ## Compilación reproducible
 
@@ -66,3 +68,7 @@ Se utilizó ChatGPT (OpenAI, GPT-6) como apoyo en la organización, los borrador
 ## Actualización de actores y contexto — 13 de noviembre de 2026
 
 Se incorpora el apartado de actores, matriz de poder e interés, relaciones externas y actividades del proceso. Este contenido estaba previsto para el avance de Rivera del día anterior, pero se integró desde la cuenta de Winston el **13 de noviembre**, por estar pendiente su publicación. No se modifica el historial ni se presenta como un commit realizado por Rivera. El equipo todavía debe revisar y validar este borrador. El PDF del avance se puede generar desde `main.tex` y las fuentes; la publicación del binario en GitHub queda pendiente.
+
+## Avance de Winston — 13 de noviembre de 2026
+
+Se añade el análisis documental del problema comercial y del modelo entidad-relación, la secuencia de actividades de requisitos, los escenarios de stock y recomendaciones, y una matriz de riesgos. Las preguntas de campo y la validación permanecen pendientes. La versión PDF del día debe regenerarse desde LaTeX y publicarse por separado para mantener el archivo binario actualizado.

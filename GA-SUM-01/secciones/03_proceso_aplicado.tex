@@ -1,0 +1,60 @@
+\section{Aplicación del proceso de requisitos al PFC}
+\subsection{Punto de partida y evidencias documentales}
+El trabajo de esta jornada se apoya en dos materiales entregados por el equipo: la base escrita del proyecto, actualizada el 11 de noviembre de 2026, y el diagrama entidad-relación editable de la plataforma. El primero plantea problemas de atención lenta, dificultades en el registro de ventas y dependencia del conocimiento del personal. El segundo muestra cómo se prevé organizar los datos. Estos materiales permiten realizar una primera \emph{elicitación documental}; no prueban por sí mismos que se hayan hecho entrevistas o mediciones en el local \cite{basePFC2026,erPFC2026,iso29148}.
+
+\begin{table}[!ht]
+\centering\scriptsize
+\caption{Registro de evidencias usadas para el análisis}
+\label{tab:documental}
+\begin{tabularx}{\columnwidth}{@{}P{0.65cm}Y P{1.35cm}@{}}
+\toprule Código & Material revisado & Lo que permite conocer\\\midrule
+D-01 & Descripción del problema y actores en la base del proyecto. & Necesidades relatadas por el equipo, pendientes de contraste.\\
+D-02 & Diagrama ER del equipo, con diez entidades para ventas, catálogo, roles, consultas IA y caché. & Relaciones de datos propuestas; no implementadas.\\
+D-03 & Guía experimental y rúbrica reducida de GA-SUM-01. & Criterios de clasificación, proceso, fuentes y artefactos.\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Secuencia de trabajo aplicada}
+La práctica distingue las cuatro fases exigidas por la rúbrica de los tres núcleos que Pohl utiliza para describir el trabajo de Ingeniería de Requisitos: elicitación, documentación y negociación. La validación y la gestión se mantienen como actividades transversales. Un cambio de requisito puede obligar a regresar a una fase anterior; no se trata de una secuencia rígida \cite{pohl2025,iso29148,swebok2024}.
+
+\begin{table}[!ht]
+\centering\scriptsize
+\caption{Estado real de las actividades del proceso}
+\label{tab:proceso}
+\begin{tabularx}{\columnwidth}{@{}P{1.05cm}Y P{1.15cm}@{}}
+\toprule Actividad & Artefacto concreto de esta práctica & Estado\\\midrule
+Elicitación & Registro D-01 a D-03 y preguntas para cajero, administrador y encargado de inventario. & Documental hecha; campo pendiente.\\
+Análisis & Escenarios de error y decisiones de alcance; riesgos de stock y de recomendaciones. & Borrador del equipo.\\
+Especificación & IDs, tipos, condiciones y criterios de aceptación para la matriz de requisitos. & En preparación.\\
+Validación & Revisión con usuarios, prototipo de venta y pruebas de aceptación de un conjunto de datos de ensayo. & No ejecutada.\\
+Gestión transversal & Relación entre necesidad, versión del requisito y evidencia; historial Git. & Iniciada.\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Análisis de situaciones concretas}
+\textbf{Venta con stock insuficiente.} Un cajero localiza un producto, introduce una cantidad y confirma. El modelo de datos contiene un campo \texttt{stock\_actual} en PRODUCTO y la cantidad de cada línea en DETALLE\_VENTA. El escenario adverso sería descontar existencias sin comprobar el stock o guardar la VENTA sin sus detalles. La condición que se debe especificar es que la venta quede registrada completa o no se registre. La regla exacta para reservas, devoluciones y ventas concurrentes aún requiere consulta al establecimiento \cite{erPFC2026}.
+
+\textbf{Recomendación de un material eléctrico.} El vendedor pregunta por una alternativa para un uso determinado. El diseño prevé guardar \texttt{prompt\_solicitud}, \texttt{respuesta\_ia} y \texttt{modelo\_motor} en CONSULTA\_RECOMENDACION. Esta estructura permite rastrear el origen de una sugerencia, pero no garantiza que la respuesta sea técnicamente correcta. El usuario debe poder revisarla, rechazarla y verificar las especificaciones antes de orientar al comprador. Groq aparece como posibilidad técnica en D-01, no como proveedor contratado ni como servicio probado \cite{basePFC2026,erPFC2026}.
+
+\subsection{Decisiones, riesgos y preguntas abiertas}
+\begin{table}[!ht]
+\centering\scriptsize
+\caption{Riesgos que deben discutirse con los interesados}
+\label{tab:riesgosviernes}
+\begin{tabularx}{\columnwidth}{@{}P{0.65cm}Y Y@{}}
+\toprule ID & Riesgo detectado en el análisis & Decisión o pregunta pendiente\\\midrule
+R-01 & Precio del producto desactualizado durante una venta. & Confirmar cuándo se fija el precio de la línea.\\
+R-02 & Stock negativo por operaciones simultáneas. & Definir reserva, rechazo o confirmación transaccional.\\
+R-03 & Sugerencia incorrecta presentada como recomendación segura. & Acordar revisión humana y límites del módulo IA.\\
+R-04 & Información personal enviada a un servicio externo sin necesidad. & Delimitar datos permitidos en cada solicitud.\\
+R-05 & Respuesta de caché usada pese a un cambio de catálogo. & Definir vigencia y actualización del caché.\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Validación prevista y criterios para continuar}
+La validación de estos artefactos no debe confundirse con su redacción. Antes de aprobar la lista de requisitos se necesita mostrar un flujo de venta a un cajero, contrastar las reglas de existencias con el responsable de inventario y confirmar quién aprueba precios y recomendaciones. Se propone trabajar con datos ficticios y registrar la fecha, el rol consultado, los cambios solicitados y la decisión final. Si falta una respuesta, el requisito conservará el estado \emph{propuesto}, sin afirmar aprobación \cite{iso29148,ireb2022}.
+
+Como siguiente entregable se elaborará una matriz con identificador, fuente, tipo, prioridad, condición y criterio de aceptación. Los campos del ER sirven de referencia para que los requisitos hablen del mismo catálogo y de la misma venta, pero no se asumirán como diseño definitivo del sistema.
