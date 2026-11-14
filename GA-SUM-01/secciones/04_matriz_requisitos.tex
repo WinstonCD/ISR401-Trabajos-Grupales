@@ -1,0 +1,130 @@
+\section{Matriz de requisitos propuesta}
+La lista siguiente reúne dieciséis requisitos distintos. Fue elaborada a partir de la base del problema del equipo y del modelo ER, pero todavía requiere aceptación de los responsables del negocio. El vocabulario \emph{deberá} expresa una condición por evaluar, no un compromiso ya firmado. La clasificación diferencia negocio, usuario, funciones, calidad, interfaz, restricción y conformidad, de acuerdo con la norma de requisitos y el modelo ISO 25010:2023 \cite{iso29148,iso25010,erPFC2026}.
+
+\subsection{Requisitos con aceptación verificable}
+\noindent\textbf{RN-01 — Negocio.} La operación de ventas del establecimiento deberá registrar en un expediente identificable cada venta realizada mediante la plataforma, para poder recuperar sus líneas y su importe.\par
+\noindent\textit{Aceptación:} En 20 ventas simuladas, cada venta queda vinculada a una referencia y sus líneas.\par
+\noindent\textit{Justificación:} Busca reducir registros dispersos; necesita confirmación de gerencia.\par\medskip
+\noindent\textbf{RU-01 — Usuario.} El personal de caja deberá poder localizar un artículo utilizando su código o parte del nombre, sin conocer el identificador interno del producto.\par
+\noindent\textit{Aceptación:} En 20 búsquedas preparadas, el cajero localiza el producto esperado utilizando nombre o código.\par
+\noindent\textit{Justificación:} Responde a la dificultad de atención relatada en el documento.\par\medskip
+\noindent\textbf{RF-01 — Funcional.} Cuando el cajero introduzca un código de barras o texto de búsqueda, la plataforma mostrará los productos coincidentes con nombre, precio vigente y existencias consultables.\par
+\noindent\textit{Aceptación:} Con 30 consultas de prueba, los resultados corresponden a los registros sembrados.\par
+\noindent\textit{Justificación:} Usa PRODUCTO.codigo\_barra, nombre\_producto, precio\_unitario y stock\_actual.\par\medskip
+\noindent\textbf{RF-02 — Funcional.} Si la cantidad solicitada supera las existencias disponibles al confirmar una venta, el sistema impedirá guardar esa operación e indicará la cantidad disponible.\par
+\noindent\textit{Aceptación:} Se rechazan 20 de 20 intentos con cantidad superior a stock y no se modifica VENTA.\par
+\noindent\textit{Justificación:} Evita ventas por encima del stock; reserva concurrente pendiente de validar.\par\medskip
+\noindent\textbf{RF-03 — Funcional.} Cuando se confirme una venta válida, el sistema guardará VENTA y todas sus filas de DETALLE\_VENTA como una operación indivisible.\par
+\noindent\textit{Aceptación:} En 20 casos simulados de fallo de guardado, ninguna venta queda sin sus líneas ni líneas sin venta.\par
+\noindent\textit{Justificación:} Se basa en la relación 1:N de la versión del ER.\par\medskip
+\noindent\textbf{RF-04 — Funcional.} Al cerrar una venta, el sistema calculará subtotal, impuesto y total a partir de cantidades, precios unitarios y la tasa tributaria configurada por el responsable autorizado.\par
+\noindent\textit{Aceptación:} En 25 ventas de prueba con importes conocidos, los tres campos coinciden con los cálculos de referencia.\par
+\noindent\textit{Justificación:} La tasa no se fija en el documento; requiere criterio fiscal vigente.\par\medskip
+\noindent\textbf{RF-05 — Funcional.} Cuando un usuario sin permiso intente modificar el precio de un producto, la plataforma rechazará la modificación y conservará el precio anterior.\par
+\noindent\textit{Aceptación:} En 30 intentos con perfiles sin autorización, no cambia PRODUCTO.precio\_unitario.\par
+\noindent\textit{Justificación:} REL ROL$\rightarrow$USUARIO define una base para permiso, no una política ya aprobada.\par\medskip
+\noindent\textbf{RF-06 — Funcional.} Cuando el vendedor pida una recomendación y existan candidatos en el catálogo, el módulo mostrará sugerencias vinculadas a productos con sus especificaciones y una advertencia de verificación técnica.\par
+\noindent\textit{Aceptación:} En 20 consultas con candidatos preparados, cada sugerencia identifica producto, características y advertencia; el usuario puede descartarla.\par
+\noindent\textit{Justificación:} No declara seguridad eléctrica automática ni exactitud de un modelo ya probado.\par\medskip
+\noindent\textbf{RNF-01 — Calidad.} La búsqueda de productos deberá responder en un tiempo percentil 95 no superior a 2,5 segundos con 30 sesiones simultáneas durante 20 minutos y un catálogo de 1000 registros.\par
+\noindent\textit{Aceptación:} Un plan de carga y su reporte registran p95 $\leq$ 2,5 s durante la ventana definida.\par
+\noindent\textit{Justificación:} Eficiencia del desempeño — comportamiento temporal; objetivo académico no medido.\par\medskip
+\noindent\textbf{RNF-02 — Calidad.} La interfaz de caja deberá permitir que al menos 18 de 20 participantes identifiquen una diferencia de precio o cantidad antes de confirmar la venta en una prueba guiada sin ayuda.\par
+\noindent\textit{Aceptación:} Prueba con 20 participantes y casos preparados: al menos 18 detectan el error antes de confirmar.\par
+\noindent\textit{Justificación:} Capacidad de interacción — protección frente a errores del usuario.\par\medskip
+\noindent\textbf{RNF-03 — Calidad.} El control de permisos deberá denegar el acceso a la modificación de precios en 100 de 100 solicitudes realizadas con cuentas sin autorización.\par
+\noindent\textit{Aceptación:} 100/100 peticiones de ensayo son rechazadas y no devuelven datos restringidos.\par
+\noindent\textit{Justificación:} Seguridad — confidencialidad; ensayo propuesto, no resultado de una auditoría.\par\medskip
+\noindent\textbf{RNF-04 — Calidad.} La consulta de catálogo deberá responder correctamente a por lo menos el 99,5 por ciento de las sondas programadas durante un periodo de 30 días de servicio.\par
+\noindent\textit{Aceptación:} Informe de sondas cada minuto: tasa de respuestas correctas $\geq$ 99,5 por ciento en 30 días.\par
+\noindent\textit{Justificación:} Fiabilidad — disponibilidad; pendiente definir exclusiones de mantenimiento.\par\medskip
+\noindent\textbf{RNF-05 — Calidad.} La plataforma deberá asociar un identificador de correlación al registro de fallos de venta para que soporte localice el punto de fallo en 95 de 100 incidentes simulados en dos minutos o menos.\par
+\noindent\textit{Aceptación:} 95/100 incidentes de prueba quedan diagnosticados con su ID y registro en dos minutos.\par
+\noindent\textit{Justificación:} Mantenibilidad — analizabilidad; no expone datos sensibles al registro.\par\medskip
+\noindent\textbf{RI-01 — Interfaz externa.} Si se integra un motor externo de IA, la interfaz intercambiará únicamente identificadores de productos y criterios técnicos previstos en el contrato aprobado, sin nombres ni identificaciones de clientes.\par
+\noindent\textit{Aceptación:} Una prueba de 30 mensajes verifica el esquema pactado y ausencia de datos personales; contrato pendiente.\par
+\noindent\textit{Justificación:} El servicio Groq es solo una posibilidad, no una integración confirmada.\par\medskip
+\noindent\textbf{RT-01 — Restricción.} El módulo de recomendación no podrá finalizar una venta ni marcar un producto como eléctricamente apto sin que un usuario autorizado revise la propuesta.\par
+\noindent\textit{Aceptación:} En 20 escenarios, ninguna respuesta de IA ejecuta confirmación de venta ni declara certificación técnica.\par
+\noindent\textit{Justificación:} Límite de seguridad propuesto para apoyo, no sustitución del vendedor.\par\medskip
+\noindent\textbf{RC-01 — Conformidad.} Si el PFC incorpora emisión tributaria electrónica, el sistema no marcará un comprobante como autorizado sin una respuesta válida del servicio autorizado que se acuerde para esa integración.\par
+\noindent\textit{Aceptación:} En 20 respuestas simuladas de autorización y rechazo, solo las válidas habilitan el estado autorizado.\par
+\noindent\textit{Justificación:} La emisión tributaria electrónica y su contrato aún no están definidos.\par\medskip
+\subsection{Clasificación y trazabilidad}
+Para que el esquema pueda revisarse sin leer de nuevo todos los enunciados, la Tabla~\ref{tab:matriz16} reúne tipo, prioridad MoSCoW y origen. D-01 es el documento del problema aportado por el equipo; D-02 corresponde al ER; PROP identifica una propuesta del análisis, sin aprobación del cliente. Se han usado \emph{Debe} y \emph{Debería} como prioridades provisionales; se confirmarán en un taller con los interesados.
+\begin{table}[!ht]
+\centering\scriptsize
+\caption{Clasificación y fuente de los dieciséis requisitos}
+\label{tab:matriz16}
+\begin{tabularx}{\columnwidth}{@{}P{0.9cm}Y P{1.05cm}P{0.7cm}@{}}
+\toprule ID & Tipo & MoSCoW & Fuente\\\midrule
+RN-01 & Negocio & Debe & D-01\\
+RU-01 & Usuario & Debe & D-01\\
+RF-01 & Funcional & Debe & D-02\\
+RF-02 & Funcional & Debe & D-02\\
+RF-03 & Funcional & Debe & D-02\\
+RF-04 & Funcional & Debe & D-02\\
+RF-05 & Funcional & Debe & D-02\\
+RF-06 & Funcional & Debería & D-02\\
+RNF-01 & Calidad & Debe & PROP\\
+RNF-02 & Calidad & Debería & PROP\\
+RNF-03 & Calidad & Debe & PROP\\
+RNF-04 & Calidad & Debería & PROP\\
+RNF-05 & Calidad & Debería & PROP\\
+RI-01 & Interfaz externa & Debería & PROP\\
+RT-01 & Restricción & Debe & D-01\\
+RC-01 & Conformidad & Debe & PROP\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Métricas de los requisitos de calidad}
+Los cinco requisitos RNF emplean características y subcaracterísticas del modelo de calidad de producto ISO/IEC 25010:2023. El banco de pruebas, los volúmenes, la duración y los valores umbral son \emph{metas académicas propuestas}; no son cifras ni ensayos realizados en ELECTRORIOS \cite{iso25010}.
+\begin{table}[!ht]
+\centering\scriptsize
+\caption{Clasificación ISO/IEC 25010:2023 y prueba propuesta}
+\label{tab:calidad16}
+\begin{tabularx}{\columnwidth}{@{}P{0.85cm}Y P{1.1cm}@{}}
+\toprule ID & Característica y subcaracterística & Umbral\\\midrule
+RNF-01 & Eficiencia del desempeño / comportamiento temporal & p95 $\leq$ 2,5 s\\
+RNF-02 & Capacidad de interacción / protección frente a errores & $\geq$18/20\\
+RNF-03 & Seguridad / confidencialidad & 100/100\\
+RNF-04 & Fiabilidad / disponibilidad & $\geq$99,5 \%\\
+RNF-05 & Mantenibilidad / analizabilidad & $\geq$95/100\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Autoevaluación documental de los enunciados}
+Se revisó la redacción frente a las nueve cualidades individuales descritas por ISO/IEC/IEEE 29148:2018: necesidad, adecuación, ausencia de ambigüedad, completitud, singularidad, viabilidad, verificabilidad, corrección y conformidad de la redacción. Las cualidades que dependen del conocimiento del negocio aún no se pueden dar por validadas con un diagrama de datos. En la tabla, \textbf{R} indica revisión de forma realizada y \textbf{P} pendiente de confirmación con el negocio; no equivale a una prueba aprobada \cite{iso29148}.
+\begin{table}[!ht]
+\centering\tiny
+\caption{Revisión de nueve cualidades por cada requisito}
+\label{tab:nueve}
+\begin{tabular}{@{}lccccccccc@{}}
+\toprule ID & N & Ad & Am & Cp & S & F & V & Co & Cf\\\midrule
+RN-01 & P & R & R & P & R & P & R & P & R\\
+RU-01 & P & R & R & P & R & P & R & P & R\\
+RF-01 & P & R & R & P & R & P & R & P & R\\
+RF-02 & P & R & R & P & R & P & R & P & R\\
+RF-03 & P & R & R & P & R & P & R & P & R\\
+RF-04 & P & R & R & P & R & P & R & P & R\\
+RF-05 & P & R & R & P & R & P & R & P & R\\
+RF-06 & P & R & P & P & R & P & R & P & R\\
+RNF-01 & P & R & R & P & R & P & R & P & R\\
+RNF-02 & P & R & R & P & R & P & R & P & R\\
+RNF-03 & P & R & R & P & R & P & R & P & R\\
+RNF-04 & P & R & R & P & R & P & R & P & R\\
+RNF-05 & P & R & R & P & R & P & R & P & R\\
+RI-01 & P & R & P & P & R & P & R & P & R\\
+RT-01 & P & R & R & P & R & P & R & P & R\\
+RC-01 & P & R & P & P & R & P & R & P & R\\
+\bottomrule
+\end{tabular}
+\end{table}
+\noindent\footnotesize N: necesidad; Ad: adecuación; Am: ambigüedad; Cp: completitud; S: singularidad; F: viabilidad; V: verificabilidad; Co: corrección; Cf: conformidad formal.\\
+\normalsize
+\textbf{Problemas de mayor atención.} RF-02 necesita una regla acordada para operaciones simultáneas. RF-04 requiere la configuración fiscal aplicable. RF-06 necesita concretar qué se entenderá por sugerencia técnicamente pertinente. RI-01 exige un contrato de servicio externo que todavía no existe. RC-01 permanece condicionado a la definición del alcance tributario. Estos puntos se dejan abiertos de manera explícita, en vez de aprobar los requisitos sin evidencia.
+
+\subsection{Control de cambios y validación pendiente}
+El origen de cada requisito queda señalado en la tabla y su aceptación está descrita en el enunciado correspondiente. Antes de la entrega definitiva se debe verificar con el personal del establecimiento si las necesidades N-01 a N-04 del primer avance justifican todos los requisitos propuestos. Si el negocio decide no integrar la IA externa o la facturación tributaria, RI-01 y RC-01 se reclasificarán o retirarán, dejando el cambio registrado. El catálogo y las ventas se validarán primero con datos de ensayo y sin exponer información de compradores.
