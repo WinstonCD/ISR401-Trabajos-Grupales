@@ -1,0 +1,83 @@
+\section{Artefactos del proceso y validación prevista}
+\subsection{De las necesidades al requisito trazable}
+El avance documental identifica problemas relatados por el equipo: errores al registrar cantidades, consultas lentas del catálogo y falta de apoyo para explicar especificaciones eléctricas. El registro del caso y el diagrama ER permiten deducir candidatos de requisitos, pero no bastan para confirmar que el negocio los apruebe \cite{basePFC2026,erPFC2026,iso29148}. Por eso se separan tres niveles: el hecho documentado, la interpretación del analista y el criterio que debe validar una persona responsable.
+
+\begin{table}[!ht]
+\centering\scriptsize
+\caption{Cadena entre el problema y una comprobación posible}
+\label{tab:cadena14}
+\begin{tabularx}{\columnwidth}{@{}P{0.6cm}Y P{1.4cm}@{}}
+\toprule Paso & Evidencia o decisión del equipo & Siguiente comprobación\\\midrule
+E1 & D-01 señala dificultades en caja y consultas al catálogo. & Observar una venta autorizada.\\
+E2 & El esquema incluye VENTA, DETALLE\_VENTA y PRODUCTO. & Revisar reglas de cantidades y precios.\\
+E3 & Se propone RF-02 para impedir ventas con stock insuficiente. & Definir el caso de prueba y su excepción.\\
+E4 & La matriz asigna criterio de aceptación y fuente. & Solicitar aprobación al cliente del PFC.\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+La diferencia importa porque una tabla de base de datos indica qué información se pretende conservar, no necesariamente las reglas con las que debe trabajar un cajero. El proceso de requisitos debe unir una necesidad con un comportamiento comprobable y mantener el registro de quién lo solicitó y quién lo aceptó \cite{iso29148,pohl2025}.
+
+\subsection{Guion de elicitación preparado para el establecimiento}
+Las preguntas de la Tabla~\ref{tab:entrevistas14} están listas para aplicar, pero todavía no constituyen transcripciones ni resultados obtenidos. Se ha definido el interlocutor previsto para que la futura visita no se limite a preguntas generales.
+\begin{table}[!ht]
+\centering\scriptsize
+\caption{Preguntas y pruebas documentales por participante}
+\label{tab:entrevistas14}
+\begin{tabularx}{\columnwidth}{@{}P{0.65cm}P{1.25cm}Y@{}}
+\toprule ID & Participante & Pregunta o tarea que se debe revisar\\\midrule
+P-01 & Caja & ¿Cómo busca artículos cuando faltan códigos de barra?\\
+P-02 & Caja & ¿Qué sucede cuando el cliente modifica una cantidad?\\
+P-03 & Caja & ¿Qué dato confirma antes de terminar la venta?\\
+P-04 & Inventario & ¿Quién actualiza existencias tras una devolución?\\
+P-05 & Inventario & ¿Qué sucede si dos ventas solicitan la última unidad?\\
+P-06 & Inventario & ¿Cómo cambian las especificaciones del producto?\\
+P-07 & Gerencia & ¿Quién autoriza descuentos y cambios de precio?\\
+P-08 & Gerencia & ¿Qué información debería poder consultar un auditor?\\
+P-09 & Gerencia & ¿Quién decide incorporar un nuevo proveedor?\\
+P-10 & Soporte & ¿Qué conexión y equipos están disponibles en caja?\\
+P-11 & Soporte & ¿Cuál es el procedimiento ante una caída del servicio?\\
+P-12 & Vendedor & ¿Cómo comprueba una recomendación técnica?\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Para convertir una respuesta en evidencia se deberá registrar fecha, rol participante, autorización para tomar notas, pregunta, síntesis aprobada y vínculo al requisito pertinente. No se publicarán datos de terceros ni respuestas sin autorización. El formulario editable está en \texttt{anexos/guion\_entrevista.md}.
+
+\subsection{Análisis de conflictos y opciones}
+El escenario de venta revela conflictos que una descripción aislada del requisito puede ocultar. Un comerciante podría pedir registrar la operación de inmediato, mientras que inventario necesita asegurar que el stock nunca sea negativo. Del mismo modo, una recomendación rápida puede ser inútil si confunde productos de distintas especificaciones. La negociación debe identificar alternativas antes de fijar el requisito definitivo \cite{pohl2025,swebok2024}.
+\begin{table}[!ht]
+\centering\scriptsize
+\caption{Decisiones que requieren acuerdo explícito}
+\label{tab:conflictos14}
+\begin{tabularx}{\columnwidth}{@{}P{0.85cm}Y Y@{}}
+\toprule Tema & Alternativas para discutir & Criterio que falta\\\midrule
+Stock & Rechazar, reservar o permitir venta pendiente. & Política real de inventario.\\
+Precio & Congelar al añadir a cesta o al confirmar. & Regla comercial aprobada.\\
+IA & Mostrar sugerencias libres o solo productos catalogados. & Nivel de seguridad exigido.\\
+Caché & Actualizar en cada consulta o con vencimiento. & Frecuencia de cambios y conectividad.\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Plan de validación y criterios de aceptación}
+El criterio de aceptación describe cómo detectar el cumplimiento de una condición una vez exista el software. Aquí se documentan las pruebas previstas y los datos de ensayo, no resultados. Se utilizarán identificadores ficticios para no exponer clientes ni transacciones reales \cite{iso29148,ireb2022}.
+\begin{table}[!ht]
+\centering\scriptsize
+\caption{Casos de revisión preparados; ninguno ejecutado}
+\label{tab:pruebas14}
+\begin{tabularx}{\columnwidth}{@{}P{0.65cm}P{0.73cm}Y@{}}
+\toprule Caso & Requisito & Resultado esperado en prueba futura\\\midrule
+V-01 & RF-01 & Búsqueda por código y nombre devuelve el producto correcto.\\
+V-02 & RF-02 & Cantidad mayor que stock disponible no confirma venta.\\
+V-03 & RF-04 & Subtotal, impuesto y total coinciden con datos de referencia.\\
+V-04 & RF-05 & Perfil sin permiso no modifica precio.\\
+V-05 & RF-06 & Recomendación es descartable y muestra características.\\
+V-06 & RNF-01 & Carga sintética informa el percentil 95.\\
+V-07 & RNF-03 & Accesos denegados no alteran datos protegidos.\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Gestión del cambio y decisiones abiertas}
+Se propone que cada requisito registre ID, versión, origen, motivo del cambio, estado y persona que lo aprueba. Una modificación del catálogo podría afectar búsqueda, venta, sugerencias y caché; por eso el cambio no debería limitarse a la pantalla. Antes de pasar de \emph{propuesto} a \emph{validado}, los integrantes deben revisar al menos tres asuntos: definición de las reglas de venta, manejo de datos del comprador y alcance real del servicio de IA. La Tabla~\ref{tab:conflictos14} deja esas decisiones abiertas de manera verificable. El repositorio constituye evidencia de versiones documentales, no de aprobación comercial.
