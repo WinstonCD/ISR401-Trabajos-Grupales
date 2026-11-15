@@ -1,0 +1,115 @@
+\section{Trazabilidad de decisiones y casos integrados}
+\subsection{Recorrido completo de una venta}
+La elaboración de los requisitos resultó más clara cuando se examinaron operaciones que utilizan varias entidades del ER al mismo tiempo. El vendedor puede buscar un producto, observar su precio y stock, seleccionar una cantidad, revisar el detalle y confirmar una venta. Ese recorrido involucra USUARIO, PRODUCTO, VENTA y DETALLE\_VENTA. La propuesta del módulo de IA añade CONSULTA\_RECOMENDACION y, si se acuerda reutilizar sugerencias, CACHE\_TECNICO\_OFFLINE. El paso de una entidad a otra representa una responsabilidad de software que debe describirse en términos verificables, no solamente como una clave foránea \cite{erPFC2026,iso29148}.
+
+\textbf{Escenario A: consulta antes de vender.} El usuario ingresa un código de barras o una parte del nombre del producto. El sistema busca coincidencias, muestra el identificador, la denominación, el precio vigente y una cantidad disponible. Si no hay coincidencias, debe mostrar un resultado vacío comprensible sin crear una venta. La acción de buscar se vincula a RF-01, mientras que el tiempo de respuesta queda bajo RNF-01. La posibilidad de hacer pruebas con un catálogo de ensayo evita depender de datos comerciales reales.
+
+\textbf{Escenario B: confirmación con inventario insuficiente.} El usuario añade tres unidades cuando solo existen dos disponibles. Si la regla final del negocio es impedir stock negativo, la plataforma deberá detener la confirmación y explicar el motivo. RF-02 controla el comportamiento y RNF-02 busca que el usuario reconozca el problema sin cometer un error involuntario. El caso contrario, con cantidad suficiente, debe registrar los detalles una sola vez; la definición de reservas y concurrencia todavía requiere una decisión de inventario.
+
+\textbf{Escenario C: validación de valores.} Una venta debe contener subtotal, impuesto y total coherentes con los importes aplicables. El ER representa los tres campos en VENTA y el valor de la línea en DETALLE\_VENTA. RF-04 propone cotejar resultados con una hoja de cálculo de referencia, pero esa comparación solo será válida cuando se confirmen las reglas de impuesto, descuentos y redondeo. Este ejemplo muestra por qué el dato almacenado y la regla de negocio deben documentarse por separado.
+
+\textbf{Escenario D: sugerencia bajo revisión.} El vendedor solicita opciones relacionadas con un artículo, el motor entrega identificadores que se contrastan con el catálogo y la interfaz muestra atributos técnicos para su revisión. El resultado no se utiliza para confirmar una operación ni para declarar aptitud eléctrica. RF-06 y RT-01 cubren esta separación. Si el servicio externo no responde, la búsqueda normal de productos debería continuar, siempre que los responsables confirmen esa política. El nombre Groq se conserva como una alternativa propuesta, no como una contratación verificada \cite{basePFC2026}.
+
+\subsection{Matriz entre requisito, interesado y evidencia}
+La Tabla~\ref{tab:trazaCompleta14} relaciona cada ID con el rol que debería revisar el contenido y una forma de comprobarlo. La columna de evidencia describe documentos o pruebas \emph{por obtener}; no representa una validación concluida.
+\begin{table*}[!t]
+\centering\scriptsize
+\caption{Trazabilidad de los dieciséis requisitos del PFC}
+\label{tab:trazaCompleta14}
+\begin{tabularx}{0.95\textwidth}{@{}P{0.9cm}P{2.5cm}Y P{3.7cm}@{}}
+\toprule ID & Interesado para revisión & Origen o necesidad asociada & Evidencia prevista\\\midrule
+RN-01 & Gerencia & D-01: dificultad en atención al cliente & Comparar flujo actual y flujo propuesto.\\
+RU-01 & Personal de caja & D-01: consulta de información de artículos & Observación de una tarea de búsqueda.\\
+RF-01 & Caja e inventario & D-02: atributos de PRODUCTO & Catálogo ficticio y casos de coincidencia.\\
+RF-02 & Inventario y gerencia & D-02: PRODUCTO.stock\_actual & Ensayo de stock insuficiente y concurrencia.\\
+RF-03 & Caja y administración & D-02: VENTA y DETALLE\_VENTA & Ensayo de confirmación y registro único.\\
+RF-04 & Administración & D-02: valores monetarios de VENTA & Casos de cálculo con reglas autorizadas.\\
+RF-05 & Gerencia y soporte & D-02: ROL y USUARIO & Matriz de permisos y accesos no autorizados.\\
+RF-06 & Vendedor y asesor técnico & D-02: CONSULTA\_RECOMENDACION & Revisión de atributos y descarte de sugerencia.\\
+RNF-01 & Caja y soporte & D-01: lentitud de consultas & Reporte p95 con 30 sesiones de prueba.\\
+RNF-02 & Personal de caja & D-01: errores de digitación & Ensayo con 20 participantes y tarea definida.\\
+RNF-03 & Gerencia y soporte & Política de permisos por aprobar & 100 solicitudes sin permiso y verificación de rechazo.\\
+RNF-04 & Soporte & Necesidad de continuidad propuesta & Historial de sondas durante 30 días.\\
+RNF-05 & Soporte técnico & Necesidad de diagnóstico propuesta & Simulación de 100 incidentes identificables.\\
+RI-01 & Gerencia y desarrollador & Posible interfaz de IA externa & Acuerdo de datos y mensajes sin información personal.\\
+RT-01 & Vendedor y gerencia & D-01: necesidad de criterio técnico & Escenarios que exigen intervención humana.\\
+RC-01 & Administración & Integración fiscal condicionada & Confirmación de alcance y contrato de servicio.\\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
+\subsection{Diferencia entre aceptación técnica y aprobación del negocio}
+La evaluación de requisitos necesita una doble comprobación. Una prueba automatizada puede demostrar que RF-05 impide modificar un precio desde una cuenta sin permisos. Sin embargo, la misma prueba no puede demostrar que la matriz de roles elegida corresponde a la política que la organización necesita. Para considerar completo ese requisito se necesitan el resultado de la prueba y la aprobación del responsable de permisos. Esta separación también se aplica a la disponibilidad de RNF-04: obtener una tasa medida no confirma que el porcentaje sea adecuado si nunca se acordó la meta \cite{iso29148,iso25010}.
+
+\subsection{Dependencias y propagación de cambios}
+\begin{table}[!ht]
+\centering\scriptsize
+\caption{Cambios que podrían afectar varios requisitos}
+\label{tab:cambiosIntegrados}
+\begin{tabularx}{\columnwidth}{@{}P{1.05cm}Y Y@{}}
+\toprule Cambio & Requisitos afectados & Revisión requerida\\\midrule
+Cambiar precio & RF-01, RF-04, RF-05 & Recalcular venta y permisos.\\
+Cambiar stock & RF-02, RF-03, RNF-01 & Consistencia y concurrencia.\\
+Cambiar catálogo & RF-01, RF-06, RI-01 & Búsqueda, atributos y sugerencias.\\
+Cambiar motor IA & RF-06, RI-01, RT-01 & Datos intercambiados y supervisión.\\
+Cambiar reglas fiscales & RF-04, RC-01 & Cálculo y autorización.\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Este registro es una base para la gestión de cambios. Cuando se modifique un requisito se deberá actualizar su versión, conservar el motivo y comprobar los vínculos de la Tabla~\ref{tab:trazaCompleta14}. No sería suficiente editar una descripción y dejar intactos los casos de prueba relacionados. La trazabilidad es especialmente importante en este PFC por la conexión entre existencias, ventas y recomendaciones \cite{pohl2025,iso29148}.
+
+\subsection{Revisión de los tres criterios de piso de la práctica}
+\textbf{G1. Sistema real identificado.} El PFC está relacionado con el proceso comercial de un establecimiento eléctrico local descrito en los documentos del equipo. Se debe conservar el nombre del caso, el límite del estudio y la distinción entre el negocio existente y la plataforma todavía propuesta. La verificación directa de operaciones del local permanece pendiente.
+
+\textbf{G2. Informe entregado con integrantes y dentro del plazo.} Los tres integrantes figuran en el documento y en el repositorio. La condición de plazo no puede acreditarse desde este borrador: deberá verificarse la hora efectiva de entrega en el SGA. El historial de Git no reemplaza el comprobante de envío.
+
+\textbf{G3. Aplicación y no solo teoría.} La práctica incluye un ER aportado por el equipo, dieciséis requisitos identificados, cinco metas de calidad cuantificadas, guiones de elicitación, casos de validación previstos y un mapa conceptual. Son artefactos de análisis documental del PFC. Su existencia no implica que las pruebas hayan sido ejecutadas o que los requisitos estén aceptados por el negocio. El próximo avance real debe registrar ese contraste de manera responsable, con autorizaciones y evidencia.
+
+
+\subsection{Diseño de una revisión guiada con usuarios}
+Una revisión del informe por tres estudiantes no equivale a una revisión por usuarios del establecimiento. Para cerrar esa distancia se preparó una pauta de sesión que se puede realizar con autorización de la organización y sin exponer ventas reales. La primera parte consistiría en mostrar una búsqueda de artículos sobre un conjunto de datos ficticios. El cajero debería indicar qué etiquetas resultan claras, si encuentra el precio correcto y qué información necesita antes de seleccionar un producto. El observador registraría dónde surgieron dudas, sin transformar cada comentario espontáneo en un requisito aprobado. Después se mostraría una venta de ensayo con una cantidad superior al stock y se pediría al participante explicar qué espera que ocurra. La conversación permitiría determinar si RF-02 debe rechazar la operación, reservar artículos o proponer otra alternativa. Estas opciones no pueden decidirse leyendo solo la tabla PRODUCTO.
+
+La segunda parte de la sesión examinaría una recomendación técnica. Se podrían preparar tres fichas de materiales eléctricos con características distintas y pedir al vendedor que identifique qué información necesitaría para recomendar uno de ellos. Una sugerencia del módulo de IA no sería tratada como respuesta correcta por defecto. El observador verificaría si el participante puede consultar especificaciones, rechazar la propuesta y volver a la búsqueda habitual. La discusión ayudaría a concretar RF-06, RI-01 y RT-01, en especial la intervención humana y los datos que podrían enviarse a un servicio externo. Las opiniones sobre compatibilidad eléctrica tendrían que contrastarse con un especialista y con las fichas técnicas correspondientes. El propósito es identificar límites y criterios de aceptación, no sustituir una prueba de seguridad eléctrica.
+
+La tercera parte abordaría permisos. Con perfiles ficticios de caja y administración, se mostrarían pantallas de edición de precios y consulta de ventas. El usuario explicaría qué acciones corresponden realmente a cada rol. El equipo compararía esas respuestas con la matriz de permisos propuesta y marcaría diferencias entre expectativa y documento. Solo después de una decisión de la organización podría comprobarse RF-05 mediante pruebas automatizadas. Estas sesiones deben dejar una ficha por observación, con rol del participante, condición de prueba, resultado documentado y cambio sugerido. Como el grupo todavía no ha entregado dichas fichas, el presente apartado se mantiene como procedimiento preparado \cite{iso29148,ireb2022}.
+
+\subsection{Priorización para una primera demostración}
+La priorización de una demostración no es una votación ya realizada con los interesados. Para orientar el trabajo se propone comenzar por las funciones que el vendedor necesita para completar una venta sin IA. Se mostrarían primero RF-01, RF-02, RF-03, RF-04 y RF-05, porque describen la consulta de catálogo, consistencia de inventario, registro de operación, cálculo y permisos. Después se añadirían RF-06 y RT-01 para comprobar cómo se incorpora la asistencia de recomendaciones sin permitir decisiones autónomas. Los umbrales de RNF-01 a RNF-05 permitirían planificar ensayos, pero no deberían convertirse en condiciones contractuales hasta aprobarse con la organización. Esta secuencia mantiene una lógica de negocio y reduce la posibilidad de que una prueba del módulo IA oculte defectos más básicos del proceso de ventas.
+
+\begin{table}[!ht]
+\centering\scriptsize
+\caption{Propuesta de demostración para obtener retroalimentación}
+\label{tab:sesionesPropuestas}
+\begin{tabularx}{\columnwidth}{@{}P{1.15cm}Y P{1.05cm}@{}}
+\toprule Sesión & Pregunta principal & Evidencia a registrar\\\midrule
+Catálogo & ¿Se reconoce el producto y su disponibilidad? & Notas de caja\\
+Venta & ¿Qué sucede si no alcanza el stock? & Regla de negocio\\
+Cálculo & ¿Cuál es el impuesto y redondeo aplicable? & Caso acordado\\
+Permisos & ¿Quién modifica datos sensibles? & Matriz autorizada\\
+Recomendación & ¿Puede verificarse y rechazarse la sugerencia? & Criterio del vendedor\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Condiciones para aceptar la información levantada}
+En cada sesión las notas deberían separarse en cuatro campos: declaración del participante, evidencia mostrada, interpretación del equipo y decisión de aprobación. Esta separación impide atribuir al cliente una regla que solo sugirió el analista. Si dos participantes discrepan sobre stock, descuentos o devolución, la discrepancia se registrará como conflicto en lugar de elegir arbitrariamente una respuesta. El acuerdo resultante deberá actualizar la versión del requisito y los casos de prueba relacionados. El seguimiento de esas decisiones se puede mantener en el repositorio y en un registro de cambios, siempre que la información privada permanezca fuera de GitHub \cite{pohl2025,swebok2024}. Solo las necesidades confirmadas podrán avanzar a una especificación aprobada; el resto conservará su estado de propuesta.
+
+\subsection{Registro de evidencias que aún deben obtenerse}
+La Tabla~\ref{tab:pendientesCierre} separa los materiales elaborados de los que todavía requieren una acción externa. Esta distinción evita presentar la existencia de un archivo como si fuera una validación exitosa.
+\begin{table}[!ht]
+\centering\scriptsize
+\caption{Comprobaciones para la entrega y el PFC}
+\label{tab:pendientesCierre}
+\begin{tabularx}{\columnwidth}{@{}P{1.3cm}Y P{1.2cm}@{}}
+\toprule Evidencia & Situación al redactar & Acción necesaria\\\midrule
+PDF y LaTeX & Fuentes compiladas en el repositorio de trabajo. & Publicar versión final.\\
+Mapa conceptual & PNG y fuente editable. & Revisar vínculos.\\
+Bibliografía & Entradas BibLaTeX y fichas ISO/IEEE. & Validar datos finales.\\
+Zotero/Mendeley & Captura no incorporada. & Adjuntar evidencia auténtica.\\
+Entrevistas & Guion preparado. & Realizar solo con autorización.\\
+Pruebas & Casos y métricas propuestos. & Ejecutar en ambiente de ensayo.\\
+Aprobación & Necesidades por contrastar. & Registrar decisión del cliente.\\
+\bottomrule
+\end{tabularx}
+\end{table}
