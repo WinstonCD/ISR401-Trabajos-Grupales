@@ -1,39 +1,42 @@
-# GA-SUM-01 · PE-U1 — Ingeniería de Requisitos y Proceso de Requisitos
+# GA-SUM-01 — Práctica Experimental Unidad I
 
-**Asignatura:** Ingeniería de Requerimientos (ISR-401)  
-**Universidad:** Universidad Técnica Estatal de Quevedo (UTEQ)  
-**Carrera:** Ingeniería de Software, cuarto nivel «B»  
-**Período:** 2026–2027 SPA  
-**PFC:** Plataforma de Ventas con módulo de recomendación basado en IA para el soporte de ventas en establecimientos eléctricos  
-**Estado de esta copia:** Contexto y fundamento te'orico inicial (Winston + Alberto), pendientes de validaci'on.
+Ingeniería de Requisitos — Software, cuarto nivel B — UTEQ — 2026–2027 SPA.
 
-## Integrantes y responsabilidades previstas
+**Proyecto:** Plataforma de Ventas con módulo de recomendación basado en IA para el soporte de ventas en establecimientos eléctricos.
 
-| Integrante | Aporte de la primera jornada |
+**Estado:** Revisión argumentada de los requisitos incorporada; mapa y síntesis pendientes.
+
+## Integrantes
+
+| Integrante | Responsabilidad en la planificación de esta jornada |
 |---|---|
-| **Cedeño Avila Winston Damian** | Contexto y límites del PFC; coordinación de secciones |
-| **Paca Pilataza Luis Alberto** | Fundamento teórico, fuentes primarias y ejemplos del PFC |
-| **Rivera Suarez Jonathan Javier** | Actores, matriz poder/interés, contexto y framework preliminar |
+| Cedeño Avila Winston Damian | Integración del proceso, guion de elicitación y casos de validación |
+| Paca Pilataza Luis Alberto | Revisión individual de la calidad de los 16 requisitos y trazabilidad |
+| Rivera Suarez Jonathan Javier | Mapa conceptual, síntesis y organización de evidencias |
 
-El reparto de tareas se propone para revisión y aprobación del grupo. Cada integrante debe revisar su contenido y realizar el commit desde su cuenta una vez que efectivamente haya trabajado su aporte. No se atribuyen entrevistas ni mediciones no ejecutadas.
+La distribución describe los entregables preparados; cada persona debe comprobar y asumir su propio aporte antes de subirlo. Los archivos fueron elaborados como propuestas de práctica, no como resultados de entrevistas realizadas.
 
-## Tema y enfoque
+## Estructura del informe
 
-Se analiza el PFC de una plataforma para apoyar ventas de materiales eléctricos mediante catálogos, inventario, trazabilidad de operaciones y recomendaciones de productos basadas en IA. Se toma como referencia el contexto comercial local de Quevedo (ELECTRORIOS), pero **ninguna integración, política interna ni entrevista se declara verificada**. Se diferencia lo observado de lo supuesto y de lo que requiere autorización.
+`main.tex` integra el contexto del PFC, el fundamento de Ingeniería de Requisitos, los actores, el proceso, 16 requisitos, ocho perspectivas, artefactos de validación y los apartados añadidos en cada avance.
 
-## Archivos actuales en este avance
+- `secciones/00_contexto_pfc.tex`: descripción, límites, visión y necesidades.
+- `secciones/01_fundamento.tex`: fundamentos y tipos de requisitos.
+- `secciones/02_actores_contexto.tex`: interesados y framework.
+- `secciones/03_proceso_aplicado.tex`: aplicación documental de actividades.
+- `secciones/04_matriz_requisitos.tex`: 16 requisitos, métricas y control de calidad.
+- `secciones/05_perspectivas_contexto.tex`: ocho perspectivas de Pohl y modelo ER.
+- `secciones/06_artefactos_proceso.tex`: guion, conflictos y validación por preparar.
+- `secciones/07_revision_calidad.tex`: revisión argumentada, fuentes y decisiones pendientes.
 
-- `main.tex`: documento maestro en formato IEEE.
-- `main.pdf`: PDF generado mediante `pdflatex` y `biber`.
-- `referencias.bib`: referencias bibliográficas primarias y verificables.
-- `secciones/00_contexto_pfc.tex`: sección 0, alcance, necesidades y preguntas.
-- `secciones/01_fundamento.tex`: fundamento 2.1–2.4 y ejemplos aplicados.
-- `secciones/02_actores_contexto.tex`: actores, contexto e interfaces propuestas.
-- `secciones/03_proceso_aplicado.tex`: aplicación documental del proceso y análisis de escenarios, incorporada el 13 de noviembre.
+- `figuras/diagrama_er_pfc.drawio` y `.png`: modelo ER proporcionado por el grupo.
 
-## Compilación reproducible
+- `anexos/`: guiones, casos de validación y registro de fuentes y evidencias.
+- `referencias.bib`: fuentes bibliográficas IEEE y documentos del caso.
 
-Se requiere TeX Live o MiKTeX con `IEEEtran`, `babel` español, `biblatex` estilo IEEE, `biber`, `microtype`, `lmodern`, `booktabs`, `tabularx`, `xurl` y `hyperref`. Desde la carpeta `GA-SUM-01`:
+## Compilación
+
+Requiere TeX Live o MiKTeX con IEEEtran, babel español, biblatex, biber, graphicx, booktabs, tabularx y hyperref. Situarse en `GA-SUM-01`:
 
 ```bash
 pdflatex -interaction=nonstopmode -halt-on-error main.tex
@@ -42,37 +45,27 @@ pdflatex -interaction=nonstopmode -halt-on-error main.tex
 pdflatex -interaction=nonstopmode -halt-on-error main.tex
 ```
 
-Los comandos se han probado para la versión entregada. No incluir archivos de compilación auxiliares (`.aux`, `.bbl`, `.blg`, `.log`).
+El documento compilado se llama `main.pdf`. Mantener las carpetas `figuras` y `secciones` junto al archivo principal. No subir archivos auxiliares `.aux`, `.bbl`, `.log` o `.bcf`.
 
-## Rúbrica y alcance del trabajo
+## Criterios de evaluación
 
-Según la rúbrica reducida, la entrega final exigirá al menos **15 requisitos** identificados y justificados, RNF cuantificados, revisión argumentada de propiedades IEEE 29148, roles de IR, trazabilidad y artefactos de elicitación/análisis/especificación/validación. La guía experimental ampliada incluye también el fundamento 2.1–2.6, ocho perspectivas, mapa conceptual editable, fuentes primarias, conclusiones y un informe de mínimo 15 páginas.
+La rúbrica reducida exige al menos 15 requisitos distintos, cinco de calidad medibles, revisión de sus propiedades, actores y marco de IR, evidencia de las cuatro actividades principales, fuentes IEEE y figuras numeradas. La guía completa añade ocho perspectivas de Pohl, mapa conceptual editable, cinco conclusiones de al menos 80 palabras y 15 páginas de contenido.
 
-**Este paquete es un avance de la jornada del 12 de noviembre; todavía no es la entrega final ni demuestra entrevistas realizadas.**
+## Fuentes y contexto
 
-## Plan para los días restantes
+Se consultaron fichas oficiales de ISO/IEC/IEEE 29148:2018, ISO/IEC 25010:2023, Springer para Pohl, SWEBOK v4 e IREB. La base del problema y el diagrama ER fueron aportados por el equipo. Las afirmaciones sobre la operación de ELECTRORIOS deben validarse con la organización antes de presentarlas como hallazgos comprobados.
 
-- **Viernes 13/11:** completar taxonomía y matriz de al menos 15 requisitos con criterios de aceptación, mejorar fuentes, preparar ocho perspectivas y los artefactos del proceso.
-- **Sábado 14/11:** validar coherencia y trazabilidad, integrar diagramas y anexos auténticos, redactar conclusiones revisadas por sus autores y compilar el documento completo.
+## Uso de IA
 
-Las fechas son un plan, no commits preprogramados. La fecha límite de esta práctica debe comprobarse en el SGA.
+ChatGPT se empleó como apoyo para preparar borradores y ordenar el trabajo en LaTeX. Los integrantes manifiestan haber revisado la redacción de sus avances y contrastado la información bibliográfica con fuentes oficiales. Cada nueva sección debe comprobarse y, de ser necesario, corregirse por el integrante responsable antes del commit. No se atribuyen a terceros entrevistas, pruebas o decisiones no realizadas.
 
-## Fuentes utilizadas
+## Evidencias todavía necesarias
 
-Consultar `referencias.bib`. Se identifican principalmente ISO/IEC/IEEE 29148:2018, ISO/IEC 25010:2023, Pohl (segunda edición, 2025), SWEBOK v4 (2024), PMBOK 7 (2021), las ediciones pedidas por la guía de 15288 y 12207, Glinz (2007) y EARS (2009). La edición 12207:2017 se conserva por exigencia de la guía aunque tiene una edición posterior; no se considera la versión vigente.
+- Autorización y registro verificable de entrevistas u observaciones reales, si se realizaron.
+- Captura genuina de la biblioteca Zotero o Mendeley para el Anexo B, exigida por la guía.
+- Confirmación en el SGA de la fecha, modalidad de entrega y condiciones específicas.
+- Revisión por el equipo de las cinco conclusiones temáticas; la guía dice también «una por integrante», pese a que el equipo está conformado por tres personas.
 
-## Uso de IA e integridad
+## Publicación y autoría
 
-Se utilizó ChatGPT (OpenAI, GPT-6) como apoyo en la organización, los borradores y la compilación en LaTeX. Las afirmaciones técnicas y los enlaces bibliográficos se cotejaron con fuentes oficiales cuando estaban disponibles. Cada integrante debe verificar, comprender y adaptar su sección antes de publicarla. No deben atribuirse a terceros trabajos o validaciones no realizadas.
-
-## Actualización de actores y contexto — 13 de noviembre de 2026
-
-Se incorpora el apartado de actores, matriz de poder e interés, relaciones externas y actividades del proceso. Este contenido estaba previsto para el avance de Rivera del día anterior, pero se integró desde la cuenta de Winston el **13 de noviembre**, por estar pendiente su publicación. No se modifica el historial ni se presenta como un commit realizado por Rivera. El equipo todavía debe revisar y validar este borrador. El PDF del avance se puede generar desde `main.tex` y las fuentes; la publicación del binario en GitHub queda pendiente.
-
-## Avance de Winston — 13 de noviembre de 2026
-
-Se añade el análisis documental del problema comercial y del modelo entidad-relación, la secuencia de actividades de requisitos, los escenarios de stock y recomendaciones, y una matriz de riesgos. Las preguntas de campo y la validación permanecen pendientes. La versión PDF del día debe regenerarse desde LaTeX y publicarse por separado para mantener el archivo binario actualizado.
-
-## Avance de perspectivas de contexto — 14 de noviembre de 2026
-
-Se incorpora desde la cuenta de Winston el material preparado para el apartado de Rivera: ocho perspectivas del contexto según Pohl, preguntas de elicitación, posibles intercambios con entidades externas y análisis del diagrama entidad-relación del PFC. Se publica `secciones/05_perspectivas_contexto.tex` junto con la versión editable `figuras/diagrama_er_pfc.drawio`. El PNG y el PDF acumulado todavía necesitan sincronizarse con esta versión. El historial mantiene la autoría y las fechas reales; no se registra como una publicación realizada por Rivera.
+Los ZIP son paquetes de avance y no commits publicados. Deben subirse en orden, cada uno desde la cuenta que realiza realmente la revisión y publicación. Los mensajes seguirán el prefijo `docs:`. No deben modificarse fechas históricas ni atribuirse a alguien una publicación hecha por otra persona.
