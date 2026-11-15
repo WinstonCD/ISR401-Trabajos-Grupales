@@ -1,3 +1,4 @@
+
 \section{Aplicación del proceso de requisitos al PFC}
 \subsection{Punto de partida y evidencias documentales}
 El trabajo de esta jornada se apoya en dos materiales entregados por el equipo: la base escrita del proyecto, actualizada el 11 de noviembre de 2026, y el diagrama entidad-relación editable de la plataforma. El primero plantea problemas de atención lenta, dificultades en el registro de ventas y dependencia del conocimiento del personal. El segundo muestra cómo se prevé organizar los datos. Estos materiales permiten realizar una primera \emph{elicitación documental}; no prueban por sí mismos que se hayan hecho entrevistas o mediciones en el local \cite{basePFC2026,erPFC2026,iso29148}.
@@ -6,7 +7,7 @@ El trabajo de esta jornada se apoya en dos materiales entregados por el equipo: 
 \centering\scriptsize
 \caption{Registro de evidencias usadas para el análisis}
 \label{tab:documental}
-\begin{tabularx}{\columnwidth}{@{}P{0.65cm}Y P{1.35cm}@{}}
+\begin{tabularx}{\columnwidth}{@{}P{0.85cm}Y P{1.85cm}@{}}
 \toprule Código & Material revisado & Lo que permite conocer\\\midrule
 D-01 & Descripción del problema y actores en la base del proyecto. & Necesidades relatadas por el equipo, pendientes de contraste.\\
 D-02 & Diagrama ER del equipo, con diez entidades para ventas, catálogo, roles, consultas IA y caché. & Relaciones de datos propuestas; no implementadas.\\
@@ -22,7 +23,7 @@ La práctica distingue las cuatro fases exigidas por la rúbrica de los tres nú
 \centering\scriptsize
 \caption{Estado real de las actividades del proceso}
 \label{tab:proceso}
-\begin{tabularx}{\columnwidth}{@{}P{1.05cm}Y P{1.15cm}@{}}
+\begin{tabularx}{\columnwidth}{@{}P{1.25cm}Y P{1.55cm}@{}}
 \toprule Actividad & Artefacto concreto de esta práctica & Estado\\\midrule
 Elicitación & Registro D-01 a D-03 y preguntas para cajero, administrador y encargado de inventario. & Documental hecha; campo pendiente.\\
 Análisis & Escenarios de error y decisiones de alcance; riesgos de stock y de recomendaciones. & Borrador del equipo.\\
@@ -55,6 +56,6 @@ R-05 & Respuesta de caché usada pese a un cambio de catálogo. & Definir vigenc
 \end{table}
 
 \subsection{Validación prevista y criterios para continuar}
-La validación de estos artefactos no debe confundirse con su redacción. Antes de aprobar la lista de requisitos se necesita mostrar un flujo de venta a un cajero, contrastar las reglas de existencias con el responsable de inventario y confirmar quién aprueba precios y recomendaciones. Se propone trabajar con datos ficticios y registrar la fecha, el rol consultado, los cambios solicitados y la decisión final. Si falta una respuesta, el requisito conservará el estado \emph{propuesto}, sin afirmar aprobación \cite{iso29148,ireb2022}.
+La validación de estos artefactos no debe confundirse con su redacción. Antes de aprobar la lista de requisitos se necesita mostrar un flujo de venta a un cajero, contrastar las reglas de existencias con el responsable de inventario y confirmar quién aprueba precios y recomendaciones. Se propone trabajar con datos ficticios y registrar la fecha, el rol consultado, los cambios solicitados y la decisión final. Si falta una respuesta, el requisito conservará el estado \emph{propuesto}, sin afirmar aprobación \cite{iso29148,ferrari2022}.
 
 Como siguiente entregable se elaborará una matriz con identificador, fuente, tipo, prioridad, condición y criterio de aceptación. Los campos del ER sirven de referencia para que los requisitos hablen del mismo catálogo y de la misma venta, pero no se asumirán como diseño definitivo del sistema.

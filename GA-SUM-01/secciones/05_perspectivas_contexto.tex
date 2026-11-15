@@ -34,7 +34,7 @@ La frontera propuesta engloba catálogo, gestión de ventas, roles, registro de 
 \begin{tabularx}{\columnwidth}{@{}P{1.08cm}Y P{1.02cm}@{}}
 \toprule Entidad & Datos previstos y protocolo por definir & Frecuencia posible\\\midrule
 Cajero & Búsqueda y venta por interfaz web prevista, aún sin diseño confirmado. & Por atención\\
-Cliente & Solicitud de artículo y confirmación de pedido, por interacción humana. & Por compra\\
+Cliente & Solicitud de artículo y confirmación del pedido, por interacción humana. & Por compra\\
 Proveedor & Catálogo y datos de artículos, mediante archivo o servicio acordado. & Al actualizar\\
 Servicio de pago & Estado y referencia de la operación, solo si existe integración contratada. & Por transacción\\
 Motor de IA & Códigos y atributos técnicos, sin datos personales; contrato aún pendiente. & Por consulta\\
@@ -49,7 +49,7 @@ Se trata de un \emph{modelo lógico preliminar}. Antes de tomarlo como base apro
 
 \begin{figure*}[!t]
 \centering
-\IfFileExists{figuras/diagrama_er_pfc.png}{\includegraphics[width=0.91\textwidth]{figuras/diagrama_er_pfc.png}}{\fbox{\parbox{0.82\textwidth}{\centering El diagrama ER está pendiente de subir como imagen. Su versión editable se conserva en la carpeta figuras.}}}
+\includegraphics[width=0.91\textwidth]{figuras/diagrama_er_pfc.png}
 \caption{Modelo entidad-relación preliminar aportado por el equipo, con diez entidades. Se conserva el archivo editable en draw.io. El esquema no representa una base de datos implementada ni validada por el negocio.}
 \label{fig:erpfc}
 \end{figure*}
@@ -57,4 +57,4 @@ Se trata de un \emph{modelo lógico preliminar}. Antes de tomarlo como base apro
 \subsection{Preguntas para cerrar el análisis del viernes}
 El responsable del almacén deberá confirmar cómo se ajusta el stock después de una venta y una devolución. El personal de caja deberá revisar si la consulta de precios, el orden de las pantallas y la advertencia de recomendación responden a su trabajo habitual. El equipo técnico deberá verificar la viabilidad de la caché y el servicio de IA. Hasta contar con esas respuestas, las métricas y relaciones quedan como propuestas. La Figura~\ref{fig:erpfc} facilita la conversación porque pone en un mismo mapa los datos que podrían verse afectados.
 
-El sábado se propone integrar el mapa conceptual de la unidad, contrastar trazabilidad y preparar la validación del informe con los responsables disponibles, sin presentar como ejecutadas actividades que todavía estén pendientes.
+El análisis de contexto permite integrar el mapa conceptual de la unidad y preparar verificaciones posteriores con los responsables disponibles, sin presentar como ejecutadas actividades que todavía estén pendientes.
