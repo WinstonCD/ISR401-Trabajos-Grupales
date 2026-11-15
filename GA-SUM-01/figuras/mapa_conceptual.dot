@@ -1,0 +1,23 @@
+digraph mapa {
+ graph [rankdir=TB, bgcolor="white", splines=polyline, nodesep=0.5, ranksep=1.0, pad="0.3", dpi=190];
+ node [shape=box, style="rounded,filled", fontname="DejaVu Sans", fontsize=12, penwidth=1.2, margin="0.23,0.20"];
+ edge [fontname="DejaVu Sans",fontsize=9, color="#64748b", arrowsize=0.75];
+ root [label="INGENIERÍA DE REQUISITOS DEL PFC",fillcolor="#1d4e65",fontcolor="white",color="#1d4e65",fontsize=18];
+ types [label="TIPOS DE REQUISITOS\nRF, calidad y restricciones\n16 candidatos con ID",fillcolor="#dbeafe",color="#4f83cc"];
+ quality [label="PROPIEDADES DE CALIDAD\nNecesidad, claridad y verificación\nIEEE 29148",fillcolor="#dcfce7",color="#4b9d73"];
+ process [label="PROCESO DE REQUISITOS\nElicitación, análisis\nespecificación, validación",fillcolor="#fff1d6",color="#d4a44a"];
+ context [label="CONTEXTO DEL SISTEMA\nVentas, inventario y roles\n8 perspectivas de Pohl",fillcolor="#f3e8ff",color="#9b74c0"];
+ output [label="ARTEFACTOS DE LA PRÁCTICA\nMatriz · ER · Casos de validación · Trazabilidad",fillcolor="#f1f5f9",color="#64748b",fontsize=14];
+ {rank=same; types; quality; process; context}
+ root -> types [label="clasifica"];
+ root -> quality [label="evalúa"];
+ root -> process [label="ordena"];
+ root -> context [label="delimita"];
+ types -> output [label="documenta"];
+ quality -> output [label="revisa"];
+ process -> output [label="produce"];
+ context -> output [label="sitúa"];
+ types -> quality [label="vínculo: comprobar",constraint=false,style=dashed,color="#b45309"];
+ context -> types [label="vínculo: originar",constraint=false,style=dashed,color="#b45309"];
+ process -> quality [label="vínculo: revisar",constraint=false,style=dashed,color="#b45309"];
+ }
