@@ -4,7 +4,7 @@ Ingeniería de Requisitos — Software, cuarto nivel B — UTEQ — 2026–2027 
 
 **Proyecto:** Plataforma de Ventas con módulo de recomendación basado en IA para el soporte de ventas en establecimientos eléctricos.
 
-**Estado:** Revisión argumentada de los requisitos incorporada; mapa y síntesis pendientes.
+**Estado:** Mapa conceptual, conclusiones y revisión documental incorporados; evidencias externas pendientes.
 
 ## Integrantes
 
@@ -28,9 +28,9 @@ La distribución describe los entregables preparados; cada persona debe comproba
 - `secciones/05_perspectivas_contexto.tex`: ocho perspectivas de Pohl y modelo ER.
 - `secciones/06_artefactos_proceso.tex`: guion, conflictos y validación por preparar.
 - `secciones/07_revision_calidad.tex`: revisión argumentada, fuentes y decisiones pendientes.
-
+- `secciones/08_mapa_conceptual.tex`, `09_conclusiones.tex` y `10_trazabilidad_integrada.tex`: mapa, cinco conclusiones y trazabilidad completa de los 16 requisitos.
 - `figuras/diagrama_er_pfc.drawio` y `.png`: modelo ER proporcionado por el grupo.
-
+- `figuras/mapa_conceptual.drawio` y `.png`: mapa conceptual editable y exportado.
 - `anexos/`: guiones, casos de validación y registro de fuentes y evidencias.
 - `referencias.bib`: fuentes bibliográficas IEEE y documentos del caso.
 
