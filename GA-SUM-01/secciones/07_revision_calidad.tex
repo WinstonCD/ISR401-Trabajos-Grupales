@@ -1,0 +1,86 @@
+\section{Revisión argumentada de la calidad de requisitos}
+\subsection{Criterio utilizado en la revisión}
+La lista de la sección anterior reúne dieciséis requisitos, pero la sola presencia de un identificador y una prueba propuesta no garantiza que estén bien formulados. Se aplicó una revisión documental basada en ISO/IEC/IEEE 29148:2018, teniendo en cuenta necesidad, adecuación, ausencia de ambigüedad, completitud, singularidad, viabilidad, verificabilidad, corrección y conformidad de la redacción. Se distinguieron las propiedades comprobables desde el texto de aquellas que requieren información de los responsables de la empresa \cite{iso29148}. El resultado se expresa como juicio del equipo sobre los borradores, no como una certificación de conformidad con la norma.
+
+\subsection{Revisión por requisito}
+\textbf{RN-01 — Negocio.} La necesidad de agilizar la atención es pertinente al problema descrito por el equipo, pero falta una línea base del proceso actual. Puede expresarse como meta de negocio, no como un tiempo garantizado del software. La necesidad y la corrección permanecen pendientes de confirmación con la gerencia.
+
+\textbf{RU-01 — Usuario.} El objetivo de consultar productos concentra una tarea reconocible del vendedor; sin embargo, deben especificarse los datos que aparecen en la búsqueda y qué hacer cuando no hay coincidencias. Se requiere un escenario de uso observado para asegurar que la secuencia corresponda a la forma real de vender.
+
+\textbf{RF-01 — Funcional.} La búsqueda por nombre o código tiene comportamiento delimitado y puede verificarse con un catálogo ficticio. La adecuación de filtros, coincidencias parciales y orden de resultados sigue abierta: son asuntos de especificación que no se deducen del modelo ER.
+
+\textbf{RF-02 — Funcional.} Impedir una venta sin stock tiene un criterio técnico claro para un caso simple. La redacción no es completa si existen reservas, preventas o ventas concurrentes. La viabilidad depende de una regla transaccional que evite que dos cajeros vendan la misma unidad.
+
+\textbf{RF-03 — Funcional.} Registrar detalle y cabecera de venta es singular solo si se entiende como una operación indivisible. El equipo debe confirmar si el local puede dejar ventas pendientes y cómo se recuperan errores de pago antes de aprobar su comportamiento.
+
+\textbf{RF-04 — Funcional.} Calcular subtotal, impuesto y total es verificable con importes de referencia, pero la tasa fiscal no puede inferirse del diagrama. Es necesario acordar redondeo, descuentos aplicables y reglas tributarias antes de considerar completa la especificación.
+
+\textbf{RF-05 — Funcional.} Rechazar modificaciones de precios sin permiso es concreto y comprobable en pruebas de autorización. La lista efectiva de permisos por rol debe aprobarla la organización. Una descripción de roles en la base de datos no basta para afirmar que la política ya existe.
+
+\textbf{RF-06 — Funcional.} La recomendación requiere separar selección de candidatos, explicación de atributos y decisión humana. Aunque puede comprobarse que aparece una advertencia, la pertinencia técnica no se garantiza por mostrar una respuesta del modelo. Faltan una taxonomía de productos y casos de rechazo con especialistas.
+
+\textbf{RNF-01 — Calidad.} El tiempo p95 está cuantificado con 30 sesiones y un catálogo de 1000 registros, por lo que puede medirse. El umbral de 2,5 segundos es una meta de ensayo, no una necesidad verificada. Deben fijarse hardware, red, conjunto de datos y procedimiento de repetición.
+
+\textbf{RNF-02 — Calidad.} La prueba con 20 usuarios expresa un resultado medible, aunque su factibilidad depende de reclutar participantes apropiados. Deben acordarse el perfil de usuario, la tarea de detección de errores y una misma instrucción inicial para no sesgar el ensayo.
+
+\textbf{RNF-03 — Calidad.} La tasa de denegación propuesta tiene numerador y denominador claros. Para comprobar la protección deben ensayarse cuentas con permisos distintos y constatar que no cambian los datos. El total de casos no reemplaza una revisión general de seguridad.
+
+\textbf{RNF-04 — Calidad.} La disponibilidad de 99,5 por ciento es medible si se define una sonda y el periodo de medición. Falta indicar cuáles mantenimientos o fallos externos son excluibles. Sin ese acuerdo, dos revisores podrían calcular porcentajes diferentes.
+
+\textbf{RNF-05 — Calidad.} La identificación de 95 de 100 fallos simulados es un objetivo observable, pero «localizar el punto de fallo» necesita una lista de categorías de incidente y una definición clara de cuándo inicia el cronómetro. La privacidad de los registros también debe revisarse.
+
+\textbf{RI-01 — Interfaz externa.} Evitar datos personales en solicitudes al servicio de IA es una restricción útil, pero la interfaz queda condicionada a la aprobación del contrato y del proveedor. Se propone conservar el requisito como candidato, no afirmar que existe una API integrada o contratada.
+
+\textbf{RT-01 — Restricción.} La prohibición de que la IA confirme ventas es singular, coherente con el riesgo identificado y fácil de demostrar con escenarios de prueba. Antes de aceptarla se debe confirmar qué usuario supervisará recomendaciones y bajo qué condiciones se permitirán sugerencias.
+
+\textbf{RC-01 — Conformidad.} La condición de emitir comprobantes tributarios autorizados es pertinente solo si el alcance incluye una integración fiscal. El esquema ER no confirma ese alcance. Sin decisión documentada de gerencia, mantener el requisito condicionado evita especificar una obligación de un servicio aún inexistente.
+
+\subsection{Aspectos que afectan a varios requisitos}
+\begin{table}[!ht]
+\centering\scriptsize
+\caption{Hallazgos de revisión agrupados por propiedad}
+\label{tab:revision14}
+\begin{tabularx}{\columnwidth}{@{}P{1.5cm}Y P{1.0cm}@{}}
+\toprule Propiedad & Hallazgo y acción necesaria & Requisitos\\\midrule
+Necesidad y corrección & Verificar que la función aporta valor y refleja reglas reales de negocio. & RN-01, RU-01, RC-01\\
+Completitud & Precisar excepciones, permisos y datos de entrada. & RF-02, RF-04, RF-06\\
+No ambigüedad & Definir «pertinente», «disponible» y criterios de error. & RF-06, RNF-04, RNF-05\\
+Viabilidad & Contrastar infraestructura, proveedor y recursos. & RNF-01, RI-01, RNF-02\\
+Verificabilidad & Establecer juegos de prueba reproducibles y salidas esperadas. & RNF-01 a RNF-05\\
+Trazabilidad & Mantener enlaces con necesidad, actor y evidencia. & Todos\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Ejemplos de mejora de enunciados}
+La comparación distingue expresiones que se deben evitar de versiones con condiciones de prueba. Las frases de la columna izquierda son \emph{ejemplos construidos para esta revisión}, no citas de entrevistas ni borradores atribuidos a otro integrante. La sintaxis de condiciones y comportamientos puede apoyarse en EARS, siempre que no se trate como garantía automática de calidad \cite{mavin2009,iso29148}.
+\begin{table}[!ht]
+\centering\scriptsize
+\caption{Transformaciones propuestas para evitar ambigüedades}
+\label{tab:mejoras14}
+\begin{tabularx}{\columnwidth}{@{}P{1.15cm}Y@{}}
+\toprule Ejemplo inicial & Enunciado revisable\\\midrule
+«La venta será rápida». & En prueba de 30 sesiones durante 20 minutos, el p95 de búsqueda de 1000 artículos no superará 2,5 s.\\
+«La IA recomendará bien». & Si existe un candidato, la sugerencia mostrará código, atributos y advertencia; el vendedor podrá descartarla.\\
+«Los precios estarán seguros». & Una cuenta sin permiso no podrá modificar el precio; 100 de 100 solicitudes serán rechazadas.\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Condiciones medibles y fuentes por contrastar}
+\begin{table}[!ht]
+\centering\scriptsize
+\caption{Plan de evaluación de los cinco requisitos de calidad}
+\label{tab:rnf14}
+\begin{tabularx}{\columnwidth}{@{}P{0.72cm}Y P{1.05cm}@{}}
+\toprule ID & Datos mínimos del ensayo & Umbral previsto\\\midrule
+RNF-01 & Catálogo de 1000 productos, 30 usuarios y 20 minutos; registrar p95. & $\leq 2{,}5$ s\\
+RNF-02 & 20 participantes, tareas idénticas de detección de error. & $\geq 18/20$\\
+RNF-03 & 100 solicitudes con perfiles sin permiso. & 100 bloqueadas\\
+RNF-04 & Sondas cada minuto, registro de 30 días. & $\geq 99{,}5$ por ciento\\
+RNF-05 & 100 incidentes sintéticos con ID de correlación. & $\geq 95/100$ en 2 min\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Los umbrales provienen de la propuesta académica del informe y no se pueden presentar como indicadores operativos verificados. El modelo de ISO/IEC 25010:2023 permite clasificar las características y subcaracterísticas, pero la aprobación del valor numérico debe provenir de una decisión documentada con los interesados \cite{iso25010}. El registro de revisión debe vincularse al cambio de versión del requisito; el archivo \texttt{anexos/revision\_requisitos.md} deja esa acción preparada para el equipo.
