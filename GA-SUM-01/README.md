@@ -1,42 +1,44 @@
 # GA-SUM-01 — Práctica Experimental Unidad I
 
-Ingeniería de Requisitos — Software, cuarto nivel B — UTEQ — 2026–2027 SPA.
+**Ingeniería de Requisitos · UTEQ · Software 4.º B · SPA 2026–2027**
 
-**Proyecto:** Plataforma de Ventas con módulo de recomendación basado en IA para el soporte de ventas en establecimientos eléctricos.
+**PFC:** Plataforma de Ventas con módulo de recomendación basado en IA para el soporte de ventas en establecimientos eléctricos.
 
-**Estado:** Mapa conceptual, conclusiones y revisión documental incorporados; evidencias externas pendientes.
+**Estado:** informe documental finalizado y compilable. Los requisitos, las reglas del negocio y las pruebas siguen siendo propuestas pendientes de validación en campo; no se afirma que el sistema esté implementado ni que las entrevistas se hayan realizado.
 
-## Integrantes
+## Equipo
 
-| Integrante | Responsabilidad en la planificación de esta jornada |
-|---|---|
-| Cedeño Avila Winston Damian | Integración del proceso, guion de elicitación y casos de validación |
-| Paca Pilataza Luis Alberto | Revisión individual de la calidad de los 16 requisitos y trazabilidad |
-| Rivera Suarez Jonathan Javier | Mapa conceptual, síntesis y organización de evidencias |
+- **Cedeño Avila Winston Damian:** análisis documental, proceso, guion de elicitación y casos de prueba.
+- **Paca Pilataza Luis Alberto:** matriz de 16 requisitos, evaluación de propiedades, métricas y trazabilidad.
+- **Rivera Suarez Jonathan Javier:** contexto, ocho perspectivas, modelo entidad-relación y mapa conceptual.
 
-La distribución describe los entregables preparados; cada persona debe comprobar y asumir su propio aporte antes de subirlo. Los archivos fueron elaborados como propuestas de práctica, no como resultados de entrevistas realizadas.
+Las funciones describen el trabajo organizado por el equipo; el historial de GitHub refleja quién publica efectivamente cada commit.
 
-## Estructura del informe
+## Contenido del informe
 
-`main.tex` integra el contexto del PFC, el fundamento de Ingeniería de Requisitos, los actores, el proceso, 16 requisitos, ocho perspectivas, artefactos de validación y los apartados añadidos en cada avance.
+- Identificación del PFC, problema y cinco partes interesadas.
+- Fundamentos de requisitos basados en ISO/IEC/IEEE 29148, Pohl y SWEBOK v4.
+- **16 requisitos únicos**, incluidos cinco de calidad con objetivos medibles.
+- Actores, actividades principales y transversales del proceso de requisitos.
+- Revisión de las características de calidad de los requisitos y matriz de trazabilidad.
+- Ocho perspectivas de contexto de Pohl y modelos aplicados al sistema de ventas.
+- **Figura 1:** mapa conceptual integrador, con al menos tres conexiones cruzadas. Fuente editable en `figuras/mapa_conceptual.drawio` y PNG.
+- **Figura 2:** diagrama entidad-relación del PFC, con fuente editable en `figuras/diagrama_er_pfc.drawio` y PNG.
+- **Cinco conclusiones temáticas**, de al menos 80 palabras cada una.
+- **Anexo A:** exportación de Zotero en estilo IEEE, con 13 registros. Se conserva el RTF original y una versión LaTeX que aparece en el PDF compilado.
+- **Anexo B:** captura genuina de la colección Zotero `GA-SUM-01` con 13 referencias. Se conserva la imagen original y un recorte de lectura.
 
-- `secciones/00_contexto_pfc.tex`: descripción, límites, visión y necesidades.
-- `secciones/01_fundamento.tex`: fundamentos y tipos de requisitos.
-- `secciones/02_actores_contexto.tex`: interesados y framework.
-- `secciones/03_proceso_aplicado.tex`: aplicación documental de actividades.
-- `secciones/04_matriz_requisitos.tex`: 16 requisitos, métricas y control de calidad.
-- `secciones/05_perspectivas_contexto.tex`: ocho perspectivas de Pohl y modelo ER.
-- `secciones/06_artefactos_proceso.tex`: guion, conflictos y validación por preparar.
-- `secciones/07_revision_calidad.tex`: revisión argumentada, fuentes y decisiones pendientes.
-- `secciones/08_mapa_conceptual.tex`, `09_conclusiones.tex` y `10_trazabilidad_integrada.tex`: mapa, cinco conclusiones y trazabilidad completa de los 16 requisitos.
-- `figuras/diagrama_er_pfc.drawio` y `.png`: modelo ER proporcionado por el grupo.
-- `figuras/mapa_conceptual.drawio` y `.png`: mapa conceptual editable y exportado.
-- `anexos/`: guiones, casos de validación y registro de fuentes y evidencias.
-- `referencias.bib`: fuentes bibliográficas IEEE y documentos del caso.
+## Estructura
 
-## Compilación
+- `main.tex`: archivo maestro IEEE.
+- `referencias.bib`: fuentes citadas durante el análisis.
+- `secciones/`: contexto, fundamento, requisitos, perspectivas, proceso, calidad, mapa, trazabilidad y conclusiones.
+- `figuras/`: mapa conceptual editable y diagrama ER, PNG y draw.io; recorte de Zotero.
+- `anexos/`: guion de entrevistas, casos de prueba, revisión y anexos bibliográficos.
 
-Requiere TeX Live o MiKTeX con IEEEtran, babel español, biblatex, biber, graphicx, booktabs, tabularx y hyperref. Situarse en `GA-SUM-01`:
+## Compilar el PDF
+
+Instalar TeX Live o MiKTeX con `IEEEtran`, `biblatex`, `biber`, `graphicx`, `booktabs`, `tabularx`, `hyperref` y `xurl`. Desde `GA-SUM-01` ejecutar:
 
 ```bash
 pdflatex -interaction=nonstopmode -halt-on-error main.tex
@@ -45,27 +47,20 @@ pdflatex -interaction=nonstopmode -halt-on-error main.tex
 pdflatex -interaction=nonstopmode -halt-on-error main.tex
 ```
 
-El documento compilado se llama `main.pdf`. Mantener las carpetas `figuras` y `secciones` junto al archivo principal. No subir archivos auxiliares `.aux`, `.bbl`, `.log` o `.bcf`.
+El resultado es `main.pdf`, que debe incluir las dos figuras del PFC, los Anexos A y B, y la declaración de uso de IA al final. Evitar subir archivos auxiliares `.aux`, `.log`, `.bcf`, `.bbl` y `.run.xml`.
 
-## Criterios de evaluación
+## Bibliografía y trazabilidad
 
-La rúbrica reducida exige al menos 15 requisitos distintos, cinco de calidad medibles, revisión de sus propiedades, actores y marco de IR, evidencia de las cuatro actividades principales, fuentes IEEE y figuras numeradas. La guía completa añade ocho perspectivas de Pohl, mapa conceptual editable, cinco conclusiones de al menos 80 palabras y 15 páginas de contenido.
+Las fichas oficiales de ISO/IEC/IEEE se conservan cuando no hay DOI o se exige una edición específica. La bibliografía analítica incluye dos artículos de 2022 con DOI: `10.1007/s00766-022-00383-7` y `10.1007/s00766-021-00367-z`. El Anexo A refleja fielmente las **13 referencias registradas en Zotero al momento de exportar** y conserva las fuentes antiguas que estaban en la biblioteca; por eso no es idéntico al listado dinámico generado desde `referencias.bib`.
 
-## Fuentes y contexto
+## Alcance y evidencia
 
-Se consultaron fichas oficiales de ISO/IEC/IEEE 29148:2018, ISO/IEC 25010:2023, Springer para Pohl, SWEBOK v4 e IREB. La base del problema y el diagrama ER fueron aportados por el equipo. Las afirmaciones sobre la operación de ELECTRORIOS deben validarse con la organización antes de presentarlas como hallazgos comprobados.
+La práctica aplica el proceso sobre la base escrita del proyecto y el diagrama ER del equipo. Los guiones y casos de validación son artefactos preparados, **no entrevistas ni pruebas efectuadas**. Si el docente exige evidencias de trabajo de campo, tendrán que obtenerse en una fase posterior con autorización del establecimiento. La entrega efectiva y el horario de cierre deben comprobarse en el SGA.
 
 ## Uso de IA
 
-ChatGPT se empleó como apoyo para preparar borradores y ordenar el trabajo en LaTeX. Los integrantes manifiestan haber revisado la redacción de sus avances y contrastado la información bibliográfica con fuentes oficiales. Cada nueva sección debe comprobarse y, de ser necesario, corregirse por el integrante responsable antes del commit. No se atribuyen a terceros entrevistas, pruebas o decisiones no realizadas.
+ChatGPT apoyó la preparación de borradores y la organización técnica en LaTeX. El grupo informó haber revisado sus borradores y comprobado los datos con fuentes oficiales. Ninguna ayuda sustituye la revisión y responsabilidad académica de los integrantes.
 
-## Evidencias todavía necesarias
+## Publicación
 
-- Autorización y registro verificable de entrevistas u observaciones reales, si se realizaron.
-- Captura genuina de la biblioteca Zotero o Mendeley para el Anexo B, exigida por la guía.
-- Confirmación en el SGA de la fecha, modalidad de entrega y condiciones específicas.
-- Revisión por el equipo de las cinco conclusiones temáticas; la guía dice también «una por integrante», pese a que el equipo está conformado por tres personas.
-
-## Publicación y autoría
-
-Los ZIP son paquetes de avance y no commits publicados. Deben subirse en orden, cada uno desde la cuenta que realiza realmente la revisión y publicación. Los mensajes seguirán el prefijo `docs:`. No deben modificarse fechas históricas ni atribuirse a alguien una publicación hecha por otra persona.
+Este es un paquete fuente para el commit documental de cierre; no modifica por sí solo el repositorio. Reemplazar únicamente los archivos correspondientes en `GA-SUM-01`, compilar `main.pdf` desde las fuentes y publicarlo en GitHub. Mensaje sugerido: `docs: integrar anexos de Zotero y cerrar informe del PFC`.

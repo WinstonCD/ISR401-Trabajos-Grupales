@@ -1,0 +1,70 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {section}{0. Selecci\'on del PFC y contexto del problema}{2}{section*.2}%
+\contentsline {section}{\numberline {I}Fundamento te\'orico aplicado al PFC}{3}{section.1}%
+\contentsline {subsection}{\numberline {\mbox {I-A}}2.1. Ingenier\'ia de Requisitos y necesidades}{3}{subsection.1.1}%
+\contentsline {subsection}{\numberline {\mbox {I-B}}2.2. Niveles y tipos de requisitos}{3}{subsection.1.2}%
+\contentsline {subsection}{\numberline {\mbox {I-C}}2.3. Funciones, interfaces, restricciones y calidad}{3}{subsection.1.3}%
+\contentsline {subsection}{\numberline {\mbox {I-D}}2.4. Propiedades de buena formulaci\'on}{4}{subsection.1.4}%
+\contentsline {subsection}{\numberline {\mbox {I-E}}Relaci\'on con el marco y ciclo de vida}{4}{subsection.1.5}%
+\contentsline {section}{\numberline {II}Actores, contexto y marco del proceso de IR}{4}{section.2}%
+\contentsline {subsection}{\numberline {\mbox {II-A}}Actores principales y responsabilidades}{4}{subsection.2.1}%
+\contentsline {subsection}{\numberline {\mbox {II-B}}Matriz de poder e inter\'es}{4}{subsection.2.2}%
+\contentsline {subsection}{\numberline {\mbox {II-C}}Delimitaci\'on del sistema y entidades externas}{4}{subsection.2.3}%
+\contentsline {subsection}{\numberline {\mbox {II-D}}Roles del proceso y framework de IR}{4}{subsection.2.4}%
+\contentsline {subsection}{\numberline {\mbox {II-E}}Primer mapa de necesidades y futuras verificaciones}{5}{subsection.2.5}%
+\contentsline {section}{\numberline {III}Aplicación del proceso de requisitos al PFC}{5}{section.3}%
+\contentsline {subsection}{\numberline {\mbox {III-A}}Punto de partida y evidencias documentales}{5}{subsection.3.1}%
+\contentsline {subsection}{\numberline {\mbox {III-B}}Secuencia de trabajo aplicada}{5}{subsection.3.2}%
+\contentsline {subsection}{\numberline {\mbox {III-C}}Análisis de situaciones concretas}{5}{subsection.3.3}%
+\contentsline {subsection}{\numberline {\mbox {III-D}}Decisiones, riesgos y preguntas abiertas}{6}{subsection.3.4}%
+\contentsline {subsection}{\numberline {\mbox {III-E}}Validación prevista y criterios para continuar}{6}{subsection.3.5}%
+\contentsline {section}{\numberline {IV}Matriz de requisitos propuesta}{6}{section.4}%
+\contentsline {subsection}{\numberline {\mbox {IV-A}}Requisitos con aceptación verificable}{6}{subsection.4.1}%
+\contentsline {subsection}{\numberline {\mbox {IV-B}}Clasificación y trazabilidad}{7}{subsection.4.2}%
+\contentsline {subsection}{\numberline {\mbox {IV-C}}Métricas de los requisitos de calidad}{8}{subsection.4.3}%
+\contentsline {subsection}{\numberline {\mbox {IV-D}}Autoevaluación documental de los enunciados}{8}{subsection.4.4}%
+\contentsline {subsection}{\numberline {\mbox {IV-E}}Control de cambios y validación pendiente}{8}{subsection.4.5}%
+\contentsline {section}{\numberline {V}Mapa conceptual integrador de la unidad}{8}{section.5}%
+\contentsline {subsection}{\numberline {\mbox {V-A}}Cómo se relaciona con el sistema de ventas}{8}{subsection.5.1}%
+\contentsline {section}{\numberline {VI}Contexto del sistema y ocho perspectivas}{9}{section.6}%
+\contentsline {subsection}{\numberline {\mbox {VI-A}}1. Perspectiva de uso}{9}{subsection.6.1}%
+\contentsline {subsection}{\numberline {\mbox {VI-B}}2. Perspectiva de dominio}{9}{subsection.6.2}%
+\contentsline {subsection}{\numberline {\mbox {VI-C}}3. Perspectiva de sistema informático}{9}{subsection.6.3}%
+\contentsline {subsection}{\numberline {\mbox {VI-D}}4. Perspectiva de desarrollo}{9}{subsection.6.4}%
+\contentsline {subsection}{\numberline {\mbox {VI-E}}5. Perspectiva de negocio}{9}{subsection.6.5}%
+\contentsline {subsection}{\numberline {\mbox {VI-F}}6. Perspectiva de innovación}{9}{subsection.6.6}%
+\contentsline {subsection}{\numberline {\mbox {VI-G}}7. Perspectiva de sociedad}{9}{subsection.6.7}%
+\contentsline {subsection}{\numberline {\mbox {VI-H}}8. Perspectiva de técnica}{10}{subsection.6.8}%
+\contentsline {subsection}{\numberline {\mbox {VI-I}}Límite del sistema y entidades externas}{10}{subsection.6.9}%
+\contentsline {subsection}{\numberline {\mbox {VI-J}}Lo que aporta el modelo de datos}{10}{subsection.6.10}%
+\contentsline {subsection}{\numberline {\mbox {VI-K}}Preguntas para cerrar el análisis del viernes}{10}{subsection.6.11}%
+\contentsline {section}{\numberline {VII}Artefactos del proceso y validación prevista}{10}{section.7}%
+\contentsline {subsection}{\numberline {\mbox {VII-A}}De las necesidades al requisito trazable}{10}{subsection.7.1}%
+\contentsline {subsection}{\numberline {\mbox {VII-B}}Guion de elicitación preparado para el establecimiento}{11}{subsection.7.2}%
+\contentsline {subsection}{\numberline {\mbox {VII-C}}Análisis de conflictos y opciones}{11}{subsection.7.3}%
+\contentsline {subsection}{\numberline {\mbox {VII-D}}Plan de validación y criterios de aceptación}{12}{subsection.7.4}%
+\contentsline {subsection}{\numberline {\mbox {VII-E}}Gestión del cambio y decisiones abiertas}{12}{subsection.7.5}%
+\contentsline {section}{\numberline {VIII}Revisión argumentada de la calidad de requisitos}{12}{section.8}%
+\contentsline {subsection}{\numberline {\mbox {VIII-A}}Criterio utilizado en la revisión}{12}{subsection.8.1}%
+\contentsline {subsection}{\numberline {\mbox {VIII-B}}Revisión por requisito}{12}{subsection.8.2}%
+\contentsline {subsection}{\numberline {\mbox {VIII-C}}Aspectos que afectan a varios requisitos}{13}{subsection.8.3}%
+\contentsline {subsection}{\numberline {\mbox {VIII-D}}Ejemplos de mejora de enunciados}{13}{subsection.8.4}%
+\contentsline {subsection}{\numberline {\mbox {VIII-E}}Condiciones medibles y fuentes por contrastar}{13}{subsection.8.5}%
+\contentsline {section}{\numberline {IX}Trazabilidad de decisiones y casos integrados}{13}{section.9}%
+\contentsline {subsection}{\numberline {\mbox {IX-A}}Recorrido completo de una venta}{13}{subsection.9.1}%
+\contentsline {subsection}{\numberline {\mbox {IX-B}}Matriz entre requisito, interesado y evidencia}{14}{subsection.9.2}%
+\contentsline {subsection}{\numberline {\mbox {IX-C}}Diferencia entre aceptación técnica y aprobación del negocio}{14}{subsection.9.3}%
+\contentsline {subsection}{\numberline {\mbox {IX-D}}Dependencias y propagación de cambios}{14}{subsection.9.4}%
+\contentsline {subsection}{\numberline {\mbox {IX-E}}Revisión de los tres criterios de piso de la práctica}{14}{subsection.9.5}%
+\contentsline {subsection}{\numberline {\mbox {IX-F}}Diseño de una revisión guiada con usuarios}{14}{subsection.9.6}%
+\contentsline {subsection}{\numberline {\mbox {IX-G}}Priorización para una primera demostración}{16}{subsection.9.7}%
+\contentsline {subsection}{\numberline {\mbox {IX-H}}Condiciones para aceptar la información levantada}{16}{subsection.9.8}%
+\contentsline {subsection}{\numberline {\mbox {IX-I}}Registro de evidencias que aún deben obtenerse}{16}{subsection.9.9}%
+\contentsline {section}{\numberline {X}Conclusiones del análisis de la unidad}{16}{section.10}%
+\contentsline {subsection}{\numberline {\mbox {X-A}}El problema comercial determina el alcance}{16}{subsection.10.1}%
+\contentsline {subsection}{\numberline {\mbox {X-B}}Un requisito necesita condiciones para comprobarse}{17}{subsection.10.2}%
+\contentsline {subsection}{\numberline {\mbox {X-C}}Los actores evitan decisiones técnicas sin contexto}{17}{subsection.10.3}%
+\contentsline {subsection}{\numberline {\mbox {X-D}}La recomendación con IA exige una decisión humana}{17}{subsection.10.4}%
+\contentsline {subsection}{\numberline {\mbox {X-E}}La trazabilidad debe continuar después del informe}{17}{subsection.10.5}%
+\contentsline {section}{Anexo A. Referencias exportadas de Zotero}{19}{section*.11}%
+\contentsline {section}{Anexo B. Biblioteca Zotero}{20}{section*.12}%
