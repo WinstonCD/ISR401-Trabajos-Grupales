@@ -1,0 +1,11 @@
+﻿ID,Requisito,VB_40,Viabilidad_tecnica_RT_30,Facilidad_esfuerzo_ES_30,Puntaje_ponderado,Esfuerzo_estimado_puntos,MoSCoW_propuesto
+R01,Acceso con credenciales institucionales,5,4,4,4.4,8,Must
+R02,Consulta de oferta académica y cupos,5,5,4,4.7,7,Must
+R03,Selección y envío de solicitud de inscripción,5,4,3,4.1,14,Must
+R04,Validación de prerrequisitos y cupos,5,4,3,4.1,10,Must
+R05,Advertencia de cruces de horario,4,4,3,3.7,8,Should
+R06,Consulta de historial académico,4,4,4,4.0,7,Should
+R07,Consulta de obligaciones financieras/bloqueos,4,3,2,3.1,9,Should
+R08,Notificación del resultado,3,4,5,3.9,3,Could
+R09,Descarga de comprobante,3,5,5,4.2,2,Could
+R10,Reportes administrativos agregados,3,3,2,2.7,12,Won't (por ahora)

@@ -1,56 +1,47 @@
-# FORM-SIM-01 — Simulación: Priorización y negociación entre roles
+# FORM-SIM-01 — Simulación: priorización y negociación entre roles
 
-**Asignatura:** Ingeniería de Requerimientos (ISR-401)  
-**Semana:** 5  
+**Asignatura:** ISR-401 · Semana 5  
 **Grupo:** CPR  
-**Cierre indicado en la actividad:** sábado 28 de noviembre de 2026, 23:59  
+**Fecha de preparación:** 27 de noviembre de 2026  
 **Sistema del ejercicio:** Inscripciones universitarias
 
 ## Integrantes registrados
 
-1. CEDEÑO AVILA WINSTON DAMIAN
-2. PACA PILATAZA LUIS ALBERTO
-3. RIVERA SUAREZ JONATHAN JAVIER
+- Cedeño Avila Winston Damian — rol confirmado por el estudiante: **gerente**.
+- Paca Pilataza Luis Alberto — rol por confirmar según asignación del docente.
+- Rivera Suarez Jonathan Javier — rol por confirmar según asignación del docente.
 
-## Propósito
+La guía de la actividad plantea cuatro roles (gerente, usuario operativo, desarrollador y auditor), pero el grupo compartido en la descripción tiene tres integrantes. Se debe consultar al docente cómo cubrir el cuarto rol. No se asigna aquí una persona ficticia.
 
-Practicar la negociación de requisitos en conflicto entre distintas partes interesadas y preparar la aplicación fundamentada de MoSCoW y votación ponderada.
+## Contenido del paquete
 
-## Trabajo que debe realizar el grupo
+- `00_datos_generales.md`: propósito, pasos y alcance de la actividad.
+- `01_catalogo_requisitos.md`: diez requisitos candidatos para el caso de inscripciones universitarias.
+- `tablas/02_matriz_moscow.md`: propuesta inicial de clasificación y justificaciones.
+- `tablas/03_votacion_ponderada.md`: criterios, escala, fórmula, resultados ilustrativos y orden.
+- `datos/votacion_propuesta.csv`: datos numéricos editables de la propuesta.
+- `conflictos/04_conflictos_y_resoluciones.md`: tensiones previsibles y resoluciones propuestas para debatir.
+- `05_roles_y_negociacion.md`: orientaciones para la participación de los roles.
+- `06_acta_de_acuerdo_grupal.md`: acta para completar con lo que realmente acuerde el grupo.
+- `aportes/Winston_Gerente/`: aporte individual del gerente.
 
-1. Cada rol presenta su posición sobre los 10 requisitos.
-2. El grupo acuerda una clasificación colectiva MoSCoW.
-3. El grupo realiza la votación ponderada con los pesos indicados en la actividad:
-   - Valor de negocio: 40 %.
-   - Riesgo técnico: 30 %.
-   - Esfuerzo: 30 %.
-4. El grupo registra los conflictos reales que surgieron y cómo fueron resueltos.
+## Importante: estado de esta documentación
 
-## Archivos de este entregable
+Este paquete es una **base de trabajo completa y editable**, no una evidencia de que la reunión ya ocurrió. No se adjuntaron las tarjetas oficiales de posiciones de los roles ni un registro de la negociación. Por eso:
 
-- `tablas/matriz_moscow.md`: acuerdo colectivo de clasificación MoSCoW.
-- `tablas/votacion_ponderada.md`: criterios, puntuaciones y cálculo ponderado.
-- `conflictos/conflictos_resueltos.md`: desacuerdos y acuerdos alcanzados.
+1. Los diez requisitos son una propuesta de trabajo para el sistema indicado; compárenlos con las tarjetas oficiales y sustituyan lo que no coincida.
+2. La matriz MoSCoW y los puntajes son una propuesta inicial, no una decisión colectiva confirmada.
+3. Los conflictos contienen resoluciones sugeridas; solo deben marcarse como resueltos después de que el grupo las discuta y las apruebe.
+4. Completen el acta con fecha, asistentes, roles y acuerdos reales. No firmen ni declaren una reunión que no se haya realizado.
 
-## Roles
+## Cómo incorporar al repositorio
 
-La actividad describe cuatro roles: gerente, usuario operativo, desarrollador y auditor. El grupo tiene tres integrantes registrados; consulten al docente cómo cubrir el cuarto rol y registren aquí la asignación acordada.
+Extraigan la carpeta `FORM-SIM-01` y cópienla dentro del repositorio `ISR401-Trabajos-Grupales`, al mismo nivel que las carpetas de las otras actividades. Si ya existe una carpeta `FORM-SIM-01`, **combinen los archivos**; no borren el trabajo existente sin revisarlo.
 
-| Rol | Integrante asignado |
-|---|---|
-| Gerente | Por acordar |
-| Usuario operativo | Por acordar |
-| Desarrollador | Por acordar |
-| Auditor | Por acordar |
+En GitHub Desktop revisen los cambios y usen un mensaje como:
 
-## Reglas para completar las plantillas
+```text
+docs(FORM-SIM-01): agrega base grupal y aporte del gerente
+```
 
-- Utilicen los 10 requisitos y las posiciones que consten en las tarjetas entregadas por el docente.
-- No inventen requisitos, votos, conflictos ni acuerdos.
-- Anoten las razones de las decisiones colectivas.
-- Antes de puntuar, acuerden y documenten una escala común y qué significa una puntuación alta para cada criterio. La actividad indica los pesos, pero no especifica una escala numérica.
-- Revisen que los resultados de las tablas coincidan con lo que realmente decidió el grupo.
-
-## Estado inicial
-
-Plantillas creadas; pendientes de completar con las tarjetas y los acuerdos reales de la simulación.
+Después de que los compañeros revisen y el grupo valide el contenido, registren los acuerdos finales en nuevos commits. El historial debe reflejar el trabajo realmente realizado por cada integrante.
